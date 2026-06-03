@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-Rack Read-Through - NVIDIA Supply Chain</title>
+<style>
+:root{--bg:#0b0f17;--card:#121826;--line:#1f2937;--ink:#e6edf6;--dim:#8b97a8;--pos:#36d399;--neg:#f87272;--accent:#5b9dff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:26px 20px 70px}
+.nav{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}.nav a{color:var(--dim);text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;border:1px solid var(--line);border-radius:8px}.nav a.active{color:#fff;background:#1c2638;border-color:#2b3a52}
+h1{font-size:23px;margin:0 0 6px}.sub{color:var(--dim);margin:0 0 22px;font-size:13px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:18px}@media(max-width:680px){.hero{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.klabel{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.big{font-size:46px;font-weight:800;letter-spacing:-1px;line-height:1}.big.pos{color:var(--pos)}.big.neg{color:var(--neg)}
+.badge{display:inline-block;font-size:14px;font-weight:700;padding:5px 12px;border-radius:8px;margin-top:6px}
+.badge.pos{background:rgba(54,211,153,.13);color:var(--pos)}.badge.neg{background:rgba(248,114,114,.13);color:var(--neg)}.badge.dim{background:#1c2638;color:var(--dim)}
+.tk{display:inline-block;background:#1c2638;color:var(--accent);border-radius:5px;padding:1px 6px;font-size:12px;margin-right:6px}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:26px 0 10px}
+ul.take{margin:0;padding-left:18px}ul.take li{margin-bottom:9px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}th.num,.num{text-align:right;font-variant-numeric:tabular-nums}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.dim{color:var(--dim)}.sm{font-size:11px;margin-top:2px}
+.foot{color:var(--dim);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:16px;line-height:1.7}
+a.inline{color:var(--accent)}
+</style></head><body><div class="wrap">
+<nav class="nav"><a href="index.html">Revenue Index</a><a href="supplychain.html">Winning-Content Map</a><a href="scoreboard.html">Live Scoreboard</a><a href="news.html">Supply-Chain News</a><a href="readthrough.html" class="active">Read-Through</a></nav>
+<h1>AI-Rack Read-Through</h1>
+<p class="sub">Translating the live Taiwan monthly-revenue signal into a forward read on AI-infrastructure demand, design direction, and the public supply-chain names &middot; updated 2026-06-03 05:20 UTC</p>
+
+<div class="hero">
+  <div class="card">
+    <div class="klabel">AI-buildout pace &mdash; content-weighted revenue momentum</div>
+    <div class="big neg">+56%</div>
+    <div class="dim" style="font-size:12px;margin-top:8px">YoY monthly-revenue growth across the Taiwan supply chain, weighted by each name's AI-rack content and signal purity (not equal-weighted).</div>
+  </div>
+  <div class="card">
+    <div class="klabel">Trend (inflection)</div>
+    <span class="badge neg">▼ Cooling</span>
+    <div class="dim" style="font-size:12px;margin-top:10px">Whether the growth <i>rate</i> itself is accelerating or rolling over &mdash; the second derivative, which tends to move the stocks before the level does.</div>
+  </div>
+</div>
+
+<h2>Takeaways &mdash; what the signal says is being prioritized</h2>
+<div class="card"><ul class="take"><li>The content-weighted build signal is running about +56% YoY and cooling (-13pp vs the prior trend).</li><li>Fastest acceleration is in server management (bmc) (+82% YoY, +47pp) — total AI-server unit volume is rising (a BMC ships in every server).</li><li>Watch odm / rack assembly: it's decelerating (-36pp), an early flag worth tracking before the US names report.</li><li>Operator read (design): power delivery and substrate are accelerating — a signal to build for liquid cooling and higher power density now, not next cycle.</li><li>Operator read (demand): rack-assembly revenue is softening (+83% YoY) — a caution flag for AI data-center capacity demand into the next prints.</li></ul></div>
+
+<h2>By content theme</h2>
+<div class="card"><table><thead><tr><th>Theme</th><th class="num">YoY</th><th class="num">Inflection</th></tr></thead>
+<tbody><tr><td>ODM / rack assembly<div class="dim sm">Wiwynn, Quanta, Wistron</div></td><td class="num pos">+83%</td><td class="num neg">▼ -36pp</td></tr><tr><td>Server management (BMC)<div class="dim sm">ASPEED</div></td><td class="num pos">+82%</td><td class="num pos">▲ +47pp</td></tr><tr><td>Liquid cooling<div class="dim sm">Asia Vital Components, Auras</div></td><td class="num pos">+56%</td><td class="num neg">▼ -42pp</td></tr><tr><td>Substrate / CCL<div class="dim sm">Elite Material, Unimicron</div></td><td class="num pos">+63%</td><td class="num pos">▲ +11pp</td></tr><tr><td>Interconnect / connectors<div class="dim sm">Lotes, BizLink</div></td><td class="num pos">+6%</td><td class="num neg">▼ -5pp</td></tr><tr><td>Power delivery<div class="dim sm">Delta Electronics, Lite-On</div></td><td class="num pos">+35%</td><td class="num pos">▲ +4pp</td></tr><tr><td>Boards & systems<div class="dim sm">Gigabyte, Chenbro</div></td><td class="num pos">+43%</td><td class="num neg">▼ -21pp</td></tr><tr><td>Foundry & EMS (diversified)<div class="dim sm">TSMC, Hon Hai (Foxconn)</div></td><td class="num pos">+23%</td><td class="num dim">→ -1pp</td></tr></tbody></table></div>
+
+<h2>Public-name read-through</h2>
+<div class="card"><table><thead><tr><th>Name</th><th>Fed by</th><th class="num">Signal</th></tr></thead>
+<tbody><tr><td><span class="tk">NVDA</span>NVIDIA</td><td class="dim sm">ODM / rack assembly, Server management (BMC)</td><td class="num pos">▲ accelerating</td></tr><tr><td><span class="tk">MPWR</span>Monolithic Power</td><td class="dim sm">Power delivery</td><td class="num pos">▲ accelerating</td></tr><tr><td><span class="tk">NVTS</span>Navitas</td><td class="dim sm">Power delivery</td><td class="num pos">▲ accelerating</td></tr><tr><td><span class="tk">ON</span>onsemi</td><td class="dim sm">Power delivery</td><td class="num pos">▲ accelerating</td></tr><tr><td><span class="tk">TSM</span>TSMC (ADR)</td><td class="dim sm">Foundry & EMS (diversified)</td><td class="num dim">→ steady</td></tr><tr><td><span class="tk">APH</span>Amphenol</td><td class="dim sm">Interconnect / connectors</td><td class="num neg">▼ decelerating</td></tr><tr><td><span class="tk">TEL</span>TE Connectivity</td><td class="dim sm">Interconnect / connectors</td><td class="num neg">▼ decelerating</td></tr><tr><td><span class="tk">VRT</span>Vertiv</td><td class="dim sm">Liquid cooling, Power delivery</td><td class="num neg">▼ decelerating</td></tr></tbody></table>
+<div class="dim sm" style="margin-top:10px">Direction inferred from the Taiwan names that share each company's content. Optical &amp; retimer names (Coherent, Lumentum, Fabrinet, Astera Labs, Credo) have no Taiwan proxy in this basket, so the signal doesn't speak to them. Prices live on the <a class="inline" href="scoreboard.html">scoreboard</a>.</div></div>
+
+<div class="foot">
+<b>Method:</b> for each Taiwan name we compute year-over-year monthly-revenue growth and its <i>inflection</i> (last three months' YoY vs the prior three). Names are weighted by an estimate of their AI-rack content and signal purity, so diversified giants don't drown out the cleaner AI reads. Themes map to the US names that share that content. The read-through is a leading indicator &mdash; Taiwan reports monthly, weeks before the US names report quarterly.<br>
+<b>Weights and mappings are estimates</b> and the revenue is as reported by the source (Taiwan MOPS via FinMind), not independently audited.<br>
+<b>Not investment advice.</b> A research signal, not a recommendation &mdash; it flags what to investigate, not what to trade.
+</div>
+</div></body></html>
