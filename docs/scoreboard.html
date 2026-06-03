@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Scoreboard - NVIDIA AI Supply Chain</title>
+<style>
+:root{--bg:#0b0f17;--card:#121826;--line:#1f2937;--ink:#e6edf6;--dim:#8b97a8;--pos:#36d399;--neg:#f87272;--accent:#5b9dff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:24px 20px 70px}
+.nav{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}.nav a{color:var(--dim);text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;border:1px solid var(--line);border-radius:8px}.nav a.active{color:#fff;background:#1c2638;border-color:#2b3a52}
+h1{font-size:23px;margin:0 0 6px}.sub{color:var(--dim);margin:0 0 22px;font-size:13px}
+.kpis{display:flex;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;flex:1;min-width:160px}
+.kpi .l{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.05em}.kpi .v{font-size:26px;font-weight:700;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 18px 12px}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:9px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em;text-align:right}th:first-child{text-align:left}
+.num{text-align:right;font-variant-numeric:tabular-nums}.pos{color:var(--pos)}.neg{color:var(--neg)}
+.grp td{color:var(--accent);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #243248;padding-top:16px}
+.tk{display:inline-block;background:#1c2638;color:var(--accent);border-radius:5px;padding:1px 6px;font-size:12px;margin-right:6px}
+.miss{color:var(--neg);font-size:12px;margin-top:10px}
+.foot{color:var(--dim);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:16px;line-height:1.7}
+a.inline{color:var(--accent)}
+</style></head><body><div class="wrap">
+<nav class="nav"><a href="index.html">Revenue Index</a><a href="supplychain.html">Winning-Content Map</a><a href="scoreboard.html" class="active">Live Scoreboard</a></nav>
+<h1>Live Scoreboard</h1>
+<p class="sub">End-of-day prices for the public NVIDIA-supply-chain names, grouped by content bucket &middot; 0 names &middot; updated 2026-06-03 01:38 UTC</p>
+<div class="kpis">
+  <div class="kpi"><div class="l">Basket avg &mdash; 1 month</div><div class="v pos">n/a</div></div>
+  <div class="kpi"><div class="l">Basket avg &mdash; 1 year</div><div class="v pos">n/a</div></div>
+</div>
+<div class="card"><table><thead><tr><th>Company</th><th>Last</th><th>1D</th><th>1M</th><th>1Y</th></tr></thead>
+<tbody></tbody></table><div class="miss">Unavailable this run: NVDA, TSM, MU, VRT, APH, TEL, COHR, LITE, FN, ALAB, CRDO, MPWR, NVTS, ON</div></div>
+<div class="foot">
+<b>What this is:</b> the market-performance companion to the <a class="inline" href="index.html">revenue signal</a> and the <a class="inline" href="supplychain.html">content map</a> &mdash; the investable public names in one view, equal-weighted basket averages on top.<br>
+<b>Source:</b> Stooq end-of-day prices (free). Prices are end-of-day, not real-time, and may lag one session.<br>
+<b>Not investment advice.</b> Open research tool.
+</div>
+</div></body></html>
