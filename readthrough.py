@@ -2,12 +2,15 @@
 Layer 5 - AI-Rack Read-Through (the alpha layer).
 Turns the live Taiwan monthly-revenue signal into a forward read for a digital-
 infrastructure investor-operator (e.g. DigitalBridge): a content-weighted AI-
-buildout-pace gauge, demand + design reads, a public-name read-through, and
-auto-generated takeaways. Built entirely on data already pulled (FinMind Taiwan
-monthly revenue) - no new data sources. Runs in GitHub Actions with the rest.
+buildout-pace gauge, evidence-backed reads, a content-theme breakdown, the raw
+company signal, and a public-name read-through.
+
+Every claim is shown with the numbers behind it: latest YoY, the last-3-months
+vs prior-3-months trajectory (the inflection = how the growth RATE is changing),
+and the company-level drivers. Built only on data already pulled (FinMind Taiwan
+monthly revenue) - no new sources. Runs in GitHub Actions with the rest.
 """
-import os, json, datetime, urllib.request, urllib.parse
-from collections import defaultdict
+import os, datetime, urllib.request, urllib.parse, json
 
 API = "https://api.finmindtrade.com/api/v4/data"
 TOKEN = os.environ.get("FINMIND_TOKEN", "").strip()
@@ -15,7 +18,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DOCS = os.path.join(HERE, "docs")
 os.makedirs(DOCS, exist_ok=True)
 
-ACCEL, DECEL = 3.0, -3.0   # inflection thresholds: pp change in YoY growth
+ACCEL, DECEL = 3.0, -3.0   # inflection thresholds (pp change in YoY growth rate)
 
 # stock_id : (name, theme, signal weight, [US read-through tickers])
 UNIVERSE = [
@@ -38,14 +41,14 @@ UNIVERSE = [
 ]
 
 THEME_MEANING = {
-    "ODM / rack assembly":         "raw AI-rack assembly volume is being deployed faster",
-    "Server management (BMC)":     "total AI-server unit volume is rising (a BMC ships in every server)",
-    "Liquid cooling":              "the build is going liquid-cooled for high-density racks",
-    "Substrate / CCL":             "higher layer-count, higher-power Rubin-class boards are ramping",
-    "Interconnect / connectors":   "copper / connector content per rack is climbing",
-    "Power delivery":              "the shift to higher-density / 800V power is accelerating",
-    "Boards & systems":            "broad server board and chassis demand is rising",
-    "Foundry & EMS (diversified)": "the broad electronics base is moving (a noisy AI proxy)",
+    "ODM / rack assembly":         "raw AI-rack assembly volume being deployed",
+    "Server management (BMC)":     "total AI-server unit volume (a BMC ships in every server)",
+    "Liquid cooling":              "the build going liquid-cooled for high-density racks",
+    "Substrate / CCL":             "higher layer-count, higher-power Rubin-class boards ramping",
+    "Interconnect / connectors":   "copper / connector content per rack",
+    "Power delivery":              "the shift to higher-density / 800V power",
+    "Boards & systems":            "broad server board and chassis demand",
+    "Foundry & EMS (diversified)": "the broad electronics base (a noisy AI proxy)",
 }
 CORE_THEMES = [t for t in THEME_MEANING if "diversified" not in t]
 
@@ -84,15 +87,25 @@ def company_signal(rows):
     ys = yoy_series(rev)
     if not ys:
         return None
-    (py, pm), yoy = ys[-1]
+    (py, pm), _ = ys[-1]
     vals = [v for _, v in ys]
-    infl = None
+    latest = vals[-1]
+    recent3 = sum(vals[-3:]) / len(vals[-3:])
     if len(vals) >= 6:
-        infl = sum(vals[-3:]) / 3 - sum(vals[-6:-3]) / 3
+        prior3 = sum(vals[-6:-3]) / 3
+    elif len(vals) > 3:
+        prior3 = sum(vals[:-3]) / len(vals[:-3])
+    else:
+        prior3 = None
+    if prior3 is not None:
+        infl = recent3 - prior3
     elif len(vals) >= 2:
         infl = vals[-1] - vals[-2]
-    return {"period": f"{py}-{pm:02d}", "yoy": yoy * 100,
-            "infl": None if infl is None else infl * 100}
+    else:
+        infl = None
+    return {"period": f"{py}-{pm:02d}", "yoy": latest * 100, "recent3": recent3 * 100,
+            "prior3": None if prior3 is None else prior3 * 100,
+            "infl": None if infl is None else infl * 100, "n": len(vals)}
 
 
 def direction(infl):
@@ -111,37 +124,72 @@ def wavg(pairs):
     return (num / den) if den else None
 
 
-def build_takeaways(o_yoy, o_dir, o_infl, themes):
-    dword = {"accelerating": "accelerating", "steady": "holding steady", "decelerating": "cooling"}[o_dir]
-    out = []
-    if o_yoy is not None:
-        infl_txt = f" ({o_infl:+.0f}pp vs the prior trend)" if o_infl is not None else ""
-        out.append(f"The content-weighted build signal is running about {o_yoy:+.0f}% YoY and {dword}{infl_txt}.")
+def agg(members):
+    return {"yoy":     wavg([(c["yoy"], c["weight"]) for c in members]),
+            "recent3": wavg([(c["recent3"], c["weight"]) for c in members]),
+            "prior3":  wavg([(c["prior3"], c["weight"]) for c in members]),
+            "infl":    wavg([(c["infl"], c["weight"]) for c in members])}
+
+
+def _fy(v): return "n/a" if v is None else f"{v:+.0f}%"
+def _fp(v): return "n/a" if v is None else f"{v:+.0f}pp"
+
+
+def build_reads(ov, odir, themes):
+    dword = {"accelerating": "accelerating", "steady": "holding steady", "decelerating": "cooling"}[odir]
+    reads = []
+    reads.append({
+        "claim": f"The AI-buildout signal is {dword}.",
+        "ev": (f"Content-weighted revenue is running {_fy(ov['yoy'])} YoY. The last 3 months averaged "
+               f"{_fy(ov['recent3'])} vs {_fy(ov['prior3'])} the prior 3 \u2014 a {_fp(ov['infl'])} "
+               f"change in the growth rate itself."),
+        "why": ("Taiwan reports monthly, weeks ahead of the US names' quarterly prints, so this "
+                "rate-of-change is an early read on AI data-center demand."),
+    })
     core = [(t, themes[t]) for t in CORE_THEMES if t in themes and themes[t]["infl"] is not None]
     if core:
-        lead_t, lead = max(core, key=lambda kv: kv[1]["infl"])
-        out.append(f"Fastest acceleration is in {lead_t.lower()} ({lead['yoy']:+.0f}% YoY, "
-                   f"{lead['infl']:+.0f}pp) \u2014 {THEME_MEANING[lead_t]}.")
-        decel = [t for t, info in core if info["dir"] == "decelerating"]
-        if decel:
-            out.append(f"Watch {decel[0].lower()}: it's decelerating ({themes[decel[0]]['infl']:+.0f}pp), "
-                       f"an early flag worth tracking before the US names report.")
-    hot = [n for n, key in (("liquid cooling", "Liquid cooling"),
-                            ("power delivery", "Power delivery"),
-                            ("substrate", "Substrate / CCL"))
-           if key in themes and themes[key]["dir"] == "accelerating"]
+        lt, li = max(core, key=lambda kv: kv[1]["infl"])
+        drv = sorted(li["members"], key=lambda c: (c["yoy"] if c["yoy"] is not None else -1e9), reverse=True)[:2]
+        reads.append({
+            "claim": f"Fastest acceleration: {lt.lower()}.",
+            "ev": (f"{_fy(li['yoy'])} YoY, inflection {_fp(li['infl'])} (last 3mo {_fy(li['recent3'])} "
+                   f"vs prior {_fy(li['prior3'])}). Drivers: "
+                   + ", ".join(f"{c['name']} {_fy(c['yoy'])}" for c in drv) + "."),
+            "why": f"Reads as {THEME_MEANING[lt]} \u2014 speeding up.",
+        })
+        cooling = [(t, i) for t, i in core if i["dir"] == "decelerating"]
+        if cooling:
+            ct, ci = min(cooling, key=lambda kv: kv[1]["infl"])
+            soft = sorted(ci["members"], key=lambda c: (c["infl"] if c["infl"] is not None else 1e9))[:2]
+            reads.append({
+                "claim": f"Cooling \u2014 watch {ct.lower()}.",
+                "ev": (f"Still {_fy(ci['yoy'])} YoY, but inflection {_fp(ci['infl'])} (last 3mo "
+                       f"{_fy(ci['recent3'])} vs prior {_fy(ci['prior3'])}). Softest: "
+                       + ", ".join(f"{c['name']} {_fp(c['infl'])}" for c in soft) + "."),
+                "why": (f"The growth rate is rolling over while the level is still high \u2014 {THEME_MEANING[ct]}, "
+                        "losing pace. An early flag worth tracking before the US names report."),
+            })
+    hot = [t for t in ("Liquid cooling", "Power delivery", "Substrate / CCL")
+           if t in themes and themes[t]["dir"] == "accelerating"]
     if hot:
-        verb = "is" if len(hot) == 1 else "are"
-        out.append("Operator read (design): " + " and ".join(hot) +
-                   f" {verb} accelerating \u2014 a signal to build for liquid cooling and higher power "
-                   "density now, not next cycle.")
+        reads.append({
+            "claim": "Operator read \u2014 design: build for density now.",
+            "ev": "Accelerating: " + "; ".join(
+                f"{t.lower()} ({_fy(themes[t]['yoy'])}, {_fp(themes[t]['infl'])})" for t in hot) + ".",
+            "why": ("Cooling, power and substrate content rise together as racks get denser and hotter \u2014 "
+                    "a signal to design for liquid cooling and higher-voltage power this cycle, not next."),
+        })
     if "ODM / rack assembly" in themes:
-        odm = themes["ODM / rack assembly"]
-        s = {"accelerating": "strong and accelerating", "steady": "steady", "decelerating": "softening"}[odm["dir"]]
-        tail = "tailwind" if odm["dir"] != "decelerating" else "caution flag"
-        out.append(f"Operator read (demand): rack-assembly revenue is {s} ({odm['yoy']:+.0f}% YoY) \u2014 a {tail} "
-                   f"for AI data-center capacity demand into the next prints.")
-    return out
+        od = themes["ODM / rack assembly"]
+        tail = "a tailwind" if od["dir"] != "decelerating" else "a caution flag"
+        reads.append({
+            "claim": "Operator read \u2014 demand: rack-assembly pace.",
+            "ev": (f"{_fy(od['yoy'])} YoY, inflection {_fp(od['infl'])} (last 3mo {_fy(od['recent3'])} "
+                   f"vs prior {_fy(od['prior3'])})."),
+            "why": (f"Rack assembly is the rawest read on AI systems actually shipping \u2014 {tail} for "
+                    "data-center capacity demand into the next prints."),
+        })
+    return reads
 
 
 def main():
@@ -161,13 +209,11 @@ def main():
     for t in THEME_MEANING:
         members = [c for c in companies if c["theme"] == t]
         if members:
-            t_infl = wavg([(c["infl"], c["weight"]) for c in members])
-            themes[t] = {"yoy": wavg([(c["yoy"], c["weight"]) for c in members]),
-                         "infl": t_infl, "dir": direction(t_infl), "members": members}
+            a = agg(members)
+            themes[t] = {**a, "dir": direction(a["infl"]), "members": members, "meaning": THEME_MEANING[t]}
 
-    overall_yoy = wavg([(c["yoy"], c["weight"]) for c in companies])
-    overall_infl = wavg([(c["infl"], c["weight"]) for c in companies])
-    overall_dir = direction(overall_infl)
+    a = agg(companies)
+    overall_dir = direction(a["infl"])
 
     markets = []
     for tk, disp in US_NAMES.items():
@@ -180,22 +226,17 @@ def main():
 
     payload = {
         "as_of_utc": datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
-        "overall_yoy": overall_yoy, "overall_infl": overall_infl, "overall_dir": overall_dir,
-        "themes": themes, "markets": markets,
-        "takeaways": build_takeaways(overall_yoy, overall_dir, overall_infl, themes),
-        "missing": missing,
+        "overall": a, "overall_dir": overall_dir,
+        "reads": build_reads(a, overall_dir, themes),
+        "themes": themes, "companies": companies, "markets": markets, "missing": missing,
     }
     with open(os.path.join(DOCS, "readthrough.html"), "w", encoding="utf-8") as f:
         f.write(render_html(payload))
-    mt = "n/a" if overall_yoy is None else f"{round(overall_yoy)}%"
-    print(f"[DONE] momentum={mt} dir={overall_dir} themes={len(themes)} missing={missing}")
+    mt = "n/a" if a["yoy"] is None else f"{round(a['yoy'])}%"
+    print(f"[DONE] momentum={mt} dir={overall_dir} themes={len(themes)} reads={len(payload['reads'])} missing={missing}")
 
 
-NAV = ('<nav class="nav"><a href="index.html">Revenue Index</a>'
-       '<a href="supplychain.html">Winning-Content Map</a>'
-       '<a href="scoreboard.html">Live Scoreboard</a>'
-       '<a href="news.html">Supply-Chain News</a>'
-       '<a href="readthrough.html" class="active">Read-Through</a></nav>')
+NAV = '<div id="nav"></div><script src="nav.js"></script>'
 
 
 def render_html(d):
@@ -204,12 +245,17 @@ def render_html(d):
     dlbl = {"accelerating": "Accelerating", "steady": "Holding steady", "decelerating": "Cooling"}
 
     def fy(v): return "n/a" if v is None else f"{v:+.0f}%"
-    def fi(v): return "n/a" if v is None else f"{v:+.0f}pp"
+    def fp(v): return "n/a" if v is None else f"{v:+.0f}pp"
+    def ycls(v): return "pos" if (v or 0) >= 0 else "neg"
 
-    o_yoy, o_dir = d["overall_yoy"], d["overall_dir"]
-    momentum = "n/a" if o_yoy is None else f"{o_yoy:+.0f}%"
+    ov, odir = d["overall"], d["overall_dir"]
+    momentum = fy(ov["yoy"])
+    omath = f'last 3mo {fy(ov["recent3"])} &middot; prior 3mo {fy(ov["prior3"])} &middot; \u0394 {fp(ov["infl"])}'
 
-    takeaways = "".join(f"<li>{t}</li>" for t in d["takeaways"]) or "<li>Signal unavailable this run.</li>"
+    reads = "".join(
+        f'<div class="read"><div class="claim">{r["claim"]}</div>'
+        f'<div class="ev">{r["ev"]}</div><div class="why">{r["why"]}</div></div>'
+        for r in d["reads"]) or '<div class="read"><div class="ev">Signal unavailable this run.</div></div>'
 
     order = CORE_THEMES + [t for t in d["themes"] if t not in CORE_THEMES]
     trows = ""
@@ -217,17 +263,33 @@ def render_html(d):
         if t not in d["themes"]:
             continue
         info = d["themes"][t]
-        names = ", ".join(c["name"] for c in info["members"])
-        ycls = "pos" if (info["yoy"] or 0) >= 0 else "neg"
-        trows += (f'<tr><td>{t}<div class="dim sm">{names}</div></td>'
-                  f'<td class="num {ycls}">{fy(info["yoy"])}</td>'
-                  f'<td class="num {dcls[info["dir"]]}">{arrow[info["dir"]]} {fi(info["infl"])}</td></tr>')
+        chips = "".join(
+            f'<span class="chip">{c["name"]} <b class="{ycls(c["yoy"])}">{fy(c["yoy"])}</b></span>'
+            for c in sorted(info["members"], key=lambda c: (c["yoy"] if c["yoy"] is not None else -1e9), reverse=True))
+        trows += (f'<tr><td>{t}'
+                  f'<div class="sub">last 3mo {fy(info["recent3"])} vs prior 3mo {fy(info["prior3"])} '
+                  f'&middot; signals {info["meaning"]}</div><div class="chips">{chips}</div></td>'
+                  f'<td class="num {ycls(info["yoy"])}">{fy(info["yoy"])}</td>'
+                  f'<td class="num {dcls[info["dir"]]}">{arrow[info["dir"]]} {fp(info["infl"])}</td></tr>')
+
+    crows = ""
+    for c in sorted(d["companies"], key=lambda c: -c["weight"]):
+        cdir = direction(c["infl"])
+        crows += (f'<tr><td><span class="tk">{c["sid"]}</span>{c["name"]}</td>'
+                  f'<td class="dim sm">{c["theme"]}</td>'
+                  f'<td class="num {ycls(c["yoy"])}">{fy(c["yoy"])}</td>'
+                  f'<td class="num {dcls[cdir]}">{fp(c["infl"])}</td>'
+                  f'<td class="num dim">{c["weight"]:.2f}</td></tr>')
 
     mrows = ""
     for m in d["markets"]:
         mrows += (f'<tr><td><span class="tk">{m["tk"]}</span>{m["name"]}</td>'
                   f'<td class="dim sm">{", ".join(m["feeders"])}</td>'
                   f'<td class="num {dcls[m["dir"]]}">{arrow[m["dir"]]} {m["dir"]}</td></tr>')
+
+    miss = ""
+    if d["missing"]:
+        miss = f'<div class="dim sm" style="margin-top:10px">No signal this run: {", ".join(d["missing"])}.</div>'
 
     tpl = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -237,66 +299,78 @@ def render_html(d):
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
 .wrap{max-width:920px;margin:0 auto;padding:26px 20px 70px}
 .nav{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}.nav a{color:var(--dim);text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;border:1px solid var(--line);border-radius:8px}.nav a.active{color:#fff;background:#1c2638;border-color:#2b3a52}
-h1{font-size:23px;margin:0 0 6px}.sub{color:var(--dim);margin:0 0 22px;font-size:13px}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:18px}@media(max-width:680px){.hero{grid-template-columns:1fr}}
+h1{font-size:23px;margin:0 0 6px}.sub-h{color:var(--dim);margin:0 0 22px;font-size:13px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:8px}@media(max-width:680px){.hero{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
 .klabel{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 .big{font-size:46px;font-weight:800;letter-spacing:-1px;line-height:1}.big.pos{color:var(--pos)}.big.neg{color:var(--neg)}
-.badge{display:inline-block;font-size:14px;font-weight:700;padding:5px 12px;border-radius:8px;margin-top:6px}
+.badge{display:inline-block;font-size:14px;font-weight:700;padding:5px 12px;border-radius:8px;margin-top:4px}
 .badge.pos{background:rgba(54,211,153,.13);color:var(--pos)}.badge.neg{background:rgba(248,114,114,.13);color:var(--neg)}.badge.dim{background:#1c2638;color:var(--dim)}
+.mono{font-variant-numeric:tabular-nums;color:var(--ink);font-size:13px;margin-top:12px;background:#0e1422;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
 .tk{display:inline-block;background:#1c2638;color:var(--accent);border-radius:5px;padding:1px 6px;font-size:12px;margin-right:6px}
-h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:26px 0 10px}
-ul.take{margin:0;padding-left:18px}ul.take li{margin-bottom:9px}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:28px 0 6px}.hint{color:var(--dim);font-size:12px;margin:0 0 12px}
+.read{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.read .claim{font-weight:700;font-size:15px;margin-bottom:7px}
+.read .ev{font-variant-numeric:tabular-nums;font-size:13px;background:#0e1422;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-bottom:8px}
+.read .why{color:var(--dim);font-size:13px;line-height:1.55}
 table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}th.num,.num{text-align:right;font-variant-numeric:tabular-nums}
-.pos{color:var(--pos)}.neg{color:var(--neg)}.dim{color:var(--dim)}.sm{font-size:11px;margin-top:2px}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.dim{color:var(--dim)}.sm{font-size:11px}
+.sub{font-size:11.5px;color:var(--dim);margin-top:3px;line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-size:11px;color:var(--dim);background:#0e1422;border:1px solid var(--line);border-radius:6px;padding:2px 7px}.chip b{font-weight:700}
 .foot{color:var(--dim);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:16px;line-height:1.7}
 a.inline{color:var(--accent)}
 </style></head><body><div class="wrap">
 __NAV__
 <h1>AI-Rack Read-Through</h1>
-<p class="sub">Translating the live Taiwan monthly-revenue signal into a forward read on AI-infrastructure demand, design direction, and the public supply-chain names &middot; updated __ASOF__</p>
+<p class="sub-h">The live Taiwan monthly-revenue signal, read forward for AI-infrastructure demand, design direction, and the public supply-chain names &middot; updated __ASOF__</p>
 
 <div class="hero">
   <div class="card">
-    <div class="klabel">AI-buildout pace &mdash; content-weighted revenue momentum</div>
+    <div class="klabel">AI-buildout pace &mdash; content-weighted YoY</div>
     <div class="big __OCLS__">__MOM__</div>
-    <div class="dim" style="font-size:12px;margin-top:8px">YoY monthly-revenue growth across the Taiwan supply chain, weighted by each name's AI-rack content and signal purity (not equal-weighted).</div>
+    <div class="dim" style="font-size:12px;margin-top:8px">Monthly-revenue growth across the Taiwan supply chain, weighted by each name's AI-rack content and signal purity (not equal-weighted).</div>
   </div>
   <div class="card">
-    <div class="klabel">Trend (inflection)</div>
+    <div class="klabel">Trend (the inflection)</div>
     <span class="badge __OCLS__">__ARROW__ __DIRLBL__</span>
-    <div class="dim" style="font-size:12px;margin-top:10px">Whether the growth <i>rate</i> itself is accelerating or rolling over &mdash; the second derivative, which tends to move the stocks before the level does.</div>
+    <div class="mono">__OMATH__</div>
+    <div class="dim" style="font-size:12px;margin-top:8px">Whether the growth <i>rate</i> is speeding up or rolling over &mdash; last 3 months' YoY vs the prior 3. This tends to move the stocks before the level does.</div>
   </div>
 </div>
 
-<h2>Takeaways &mdash; what the signal says is being prioritized</h2>
-<div class="card"><ul class="take">__TAKE__</ul></div>
+<h2>Reads</h2>
+<p class="hint">What the signal says &mdash; each with the numbers behind it, then what it means and why.</p>
+__READS__
 
 <h2>By content theme</h2>
-<div class="card"><table><thead><tr><th>Theme</th><th class="num">YoY</th><th class="num">Inflection</th></tr></thead>
+<p class="hint">Content-weighted growth and inflection per theme, with the company drivers and what an acceleration there signals.</p>
+<div class="card"><table><thead><tr><th>Theme &amp; drivers</th><th class="num">YoY</th><th class="num">Inflection</th></tr></thead>
 <tbody>__THEMES__</tbody></table></div>
+
+<h2>Raw signal &mdash; all names</h2>
+<p class="hint">The underlying company data the reads are built from. Inflection = last-3-month avg YoY minus prior-3-month avg YoY. Weight = estimated AI-rack content &times; signal purity.</p>
+<div class="card"><table><thead><tr><th>Company</th><th>Theme</th><th class="num">YoY</th><th class="num">Inflection</th><th class="num">Wt</th></tr></thead>
+<tbody>__COMPANIES__</tbody></table>__MISS__</div>
 
 <h2>Public-name read-through</h2>
 <div class="card"><table><thead><tr><th>Name</th><th>Fed by</th><th class="num">Signal</th></tr></thead>
 <tbody>__MARKETS__</tbody></table>
-<div class="dim sm" style="margin-top:10px">Direction inferred from the Taiwan names that share each company's content. Optical &amp; retimer names (__NOPROXY__) have no Taiwan proxy in this basket, so the signal doesn't speak to them. Prices live on the <a class="inline" href="scoreboard.html">scoreboard</a>.</div></div>
+<div class="sub" style="margin-top:10px">Direction inferred from the Taiwan names that share each company's content. Optical &amp; retimer names (__NOPROXY__) have no Taiwan proxy in this basket, so the signal doesn't speak to them. Prices live on the <a class="inline" href="scoreboard.html">scoreboard</a>.</div></div>
 
 <div class="foot">
-<b>Method:</b> for each Taiwan name we compute year-over-year monthly-revenue growth and its <i>inflection</i> (last three months' YoY vs the prior three). Names are weighted by an estimate of their AI-rack content and signal purity, so diversified giants don't drown out the cleaner AI reads. Themes map to the US names that share that content. The read-through is a leading indicator &mdash; Taiwan reports monthly, weeks before the US names report quarterly.<br>
-<b>Weights and mappings are estimates</b> and the revenue is as reported by the source (Taiwan MOPS via FinMind), not independently audited.<br>
-<b>Not investment advice.</b> A research signal, not a recommendation &mdash; it flags what to investigate, not what to trade.
+<b>Method:</b> for each Taiwan name we compute year-over-year monthly-revenue growth and its <i>inflection</i> &mdash; the last three months' average YoY minus the prior three months'. A positive inflection means growth is accelerating; negative means it's cooling even if still positive. Names are content-weighted so diversified giants don't drown out the cleaner AI reads, then grouped into themes that map to the US names sharing that content. Taiwan reports monthly, weeks before the US names report quarterly &mdash; that lead is the edge.<br>
+<b>Weights and mappings are estimates;</b> revenue is as reported by the source (Taiwan MOPS via FinMind), not independently audited.<br>
+<b>Not investment advice</b> &mdash; a research signal that flags what to investigate, not what to trade.
 </div>
 </div></body></html>"""
-    return (tpl.replace("__NAV__", NAV)
-               .replace("__ASOF__", d["as_of_utc"])
-               .replace("__OCLS__", dcls[o_dir])
-               .replace("__MOM__", momentum)
-               .replace("__ARROW__", arrow[o_dir])
-               .replace("__DIRLBL__", dlbl[o_dir])
-               .replace("__TAKE__", takeaways)
-               .replace("__THEMES__", trows)
-               .replace("__MARKETS__", mrows)
+    return (tpl.replace("__NAV__", NAV).replace("__ASOF__", d["as_of_utc"])
+               .replace("__OCLS__", dcls[odir]).replace("__MOM__", momentum)
+               .replace("__ARROW__", arrow[odir]).replace("__DIRLBL__", dlbl[odir])
+               .replace("__OMATH__", omath).replace("__READS__", reads)
+               .replace("__THEMES__", trows).replace("__COMPANIES__", crows)
+               .replace("__MARKETS__", mrows).replace("__MISS__", miss)
                .replace("__NOPROXY__", NO_PROXY))
 
 
