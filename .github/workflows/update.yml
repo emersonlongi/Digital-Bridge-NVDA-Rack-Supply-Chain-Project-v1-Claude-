@@ -2,9 +2,9 @@ name: Update Taiwan AI supply-chain index
 
 on:
   schedule:
-    - cron: '0 2 11 * *'   # 11th of each month, after MOPS filing deadline
-    - cron: '0 2 * * 1'    # every Monday, to catch late filers
-  workflow_dispatch: {}     # manual "Run workflow" button
+    - cron: '0 2 11 * *'
+    - cron: '0 2 * * 1'
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -24,6 +24,7 @@ jobs:
           python build.py
           python scoreboard.py
           python news.py
+          python readthrough.py
       - name: Commit updated site
         run: |
           git config user.name  "github-actions[bot]"
