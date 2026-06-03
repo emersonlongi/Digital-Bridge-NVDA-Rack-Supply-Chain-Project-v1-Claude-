@@ -118,11 +118,7 @@ def main():
     print(f"[DONE] total headlines={total}")
 
 
-NAV = ('<nav class="nav"><a href="index.html">Revenue Index</a>'
-       '<a href="supplychain.html">Winning-Content Map</a>'
-       '<a href="scoreboard.html">Live Scoreboard</a>'
-       '<a href="news.html" class="active">Supply-Chain News</a>'
-       '<a href="readthrough.html">Read-Through</a></nav>')
+NAV = '<div id="nav"></div><script src="nav.js"></script>'
 
 
 def render_html(sections, now, total):
