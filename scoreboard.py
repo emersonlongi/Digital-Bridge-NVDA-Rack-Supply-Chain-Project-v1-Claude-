@@ -97,11 +97,7 @@ def main():
     print(f"[DONE] names={len(rows)} avg_1M={data['avg_m1']} avg_1Y={data['avg_y1']} missing={missing}")
 
 
-NAV = ('<nav class="nav"><a href="index.html">Revenue Index</a>'
-       '<a href="supplychain.html">Winning-Content Map</a>'
-       '<a href="scoreboard.html" class="active">Live Scoreboard</a>'
-       '<a href="news.html">Supply-Chain News</a>'
-       '<a href="readthrough.html">Read-Through</a></nav>')
+NAV = '<div id="nav"></div><script src="nav.js"></script>'
 
 
 def render_html(d):
