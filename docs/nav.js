@@ -8,6 +8,7 @@
     ["news.html",         "Supply-Chain News"],
     ["readthrough.html",  "Read-Through"],
     ["power.html",        "Grid Demand Pulse"]
+    ["gw.html",           "GW in Transit"]
   ];
   var here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   if (here === "") here = "index.html";
