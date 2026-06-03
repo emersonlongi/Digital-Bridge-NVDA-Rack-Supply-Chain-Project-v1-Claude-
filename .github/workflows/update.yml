@@ -17,12 +17,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build dashboard + scoreboard
+      - name: Build all pages
         env:
           FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
         run: |
           python build.py
           python scoreboard.py
+          python news.py
       - name: Commit updated site
         run: |
           git config user.name  "github-actions[bot]"
