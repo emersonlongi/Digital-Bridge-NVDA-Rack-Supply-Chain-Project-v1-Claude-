@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grid Demand Pulse - NVIDIA AI Supply Chain</title>
+<style>
+:root{--bg:#0b0f17;--card:#121826;--line:#1f2937;--ink:#e6edf6;--dim:#8b97a8;--pos:#36d399;--neg:#f87272;--accent:#5b9dff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:26px 20px 70px}
+.nav{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}.nav a{color:var(--dim);text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;border:1px solid var(--line);border-radius:8px}.nav a.active{color:#fff;background:#1c2638;border-color:#2b3a52}
+h1{font-size:23px;margin:0 0 6px}.sub-h{color:var(--dim);margin:0 0 22px;font-size:13px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:8px}@media(max-width:680px){.hero{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.klabel{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.big{font-size:46px;font-weight:800;letter-spacing:-1px;line-height:1}.big.pos{color:var(--pos)}.big.neg{color:var(--neg)}
+.badge{display:inline-block;font-size:14px;font-weight:700;padding:5px 12px;border-radius:8px;margin-top:4px}
+.badge.pos{background:rgba(54,211,153,.13);color:var(--pos)}.badge.neg{background:rgba(248,114,114,.13);color:var(--neg)}.badge.dim{background:#1c2638;color:var(--dim)}
+.mono{font-variant-numeric:tabular-nums;color:var(--ink);font-size:13px;margin-top:12px;background:#0e1422;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.tk{display:inline-block;background:#1c2638;color:var(--accent);border-radius:5px;padding:1px 6px;font-size:12px;margin-right:6px}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:28px 0 6px}.hint{color:var(--dim);font-size:12px;margin:0 0 12px}
+.read{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.read .claim{font-weight:700;font-size:15px;margin-bottom:7px}
+.read .ev{font-variant-numeric:tabular-nums;font-size:13px;background:#0e1422;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-bottom:8px}
+.read .why{color:var(--dim);font-size:13px;line-height:1.55}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}th.num,.num{text-align:right;font-variant-numeric:tabular-nums}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.dim{color:var(--dim)}.sm{font-size:11px}
+.sub{font-size:11.5px;color:var(--dim);margin-top:3px;line-height:1.5}
+.foot{color:var(--dim);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:16px;line-height:1.7}
+a.inline{color:var(--accent)}
+</style></head><body><div class="wrap">
+<div id="nav"></div><script src="nav.js"></script>
+<h1>Grid Demand Pulse</h1>
+<p class="sub-h">How fast electricity demand is growing in the US grids where AI data centers cluster &mdash; the binding constraint on the buildout, read forward &middot; updated 2026-06-03 06:13 UTC</p>
+
+<div class="hero">
+  <div class="card">
+    <div class="klabel">Datacenter-grid demand &mdash; content-weighted YoY</div>
+    <div class="big pos">+7.3%</div>
+    <div class="dim" style="font-size:12px;margin-top:8px">Electricity demand growth across the balancing authorities that host the major datacenter hubs, weighted by each grid's datacenter intensity (not equal-weighted).</div>
+  </div>
+  <div class="card">
+    <div class="klabel">Trend (the inflection)</div>
+    <span class="badge pos">▲ Accelerating</span>
+    <div class="mono">last 3mo +4.2% &middot; prior 3mo -0.9% &middot; Δ +5.1pp</div>
+    <div class="dim" style="font-size:12px;margin-top:8px">Whether demand growth is speeding up or rolling over &mdash; last 3 months' YoY vs the prior 3. A roll-over in a hot grid can mean power is hitting its ceiling.</div>
+  </div>
+</div>
+
+<h2>Reads</h2>
+<p class="hint">What the signal says &mdash; each with the numbers behind it, then what it means and why, for an infrastructure operator.</p>
+<div class="read"><div class="claim">Power demand across datacenter grids is accelerating.</div><div class="ev">Content-weighted demand is running +7.3% YoY. The last 3 months averaged +4.2% vs -0.9% the prior 3 — a +5.1pp change in the growth rate.</div><div class="why">Power, not chips, is the gating constraint on AI capacity — this is the arena a digital-infrastructure operator competes in. Accelerating demand means capacity is tightening and energized sites gain scarcity value.</div></div><div class="read"><div class="claim">Fastest-growing grid: Arizona Public Service (Phoenix metro).</div><div class="ev">+33.1% YoY, inflection +13.1pp (last 3mo +14.4% vs prior +1.2%).</div><div class="why">This is where load is climbing fastest — so where power headroom is scarcest and the value of an energized site or a live interconnection position is highest.</div></div><div class="read"><div class="claim">Where power is scarce, it gets priced.</div><div class="ev">Arizona Public Service +33.1% vs PacifiCorp West -9.2% — a 42pp spread in demand growth across grids.</div><div class="why">Demand isn't uniform — it concentrates where land, power and fiber line up. Whoever holds energized capacity or queue position in the hottest grids has pricing power; that scarcity is the asset digital-infra deals underwrite.</div></div>
+
+<h2>By grid</h2>
+<p class="hint">Demand growth and inflection per balancing authority, ranked by how fast load is climbing.</p>
+<div class="card"><table><thead><tr><th>Grid &amp; coverage</th><th class="num">YoY</th><th class="num">Inflection</th></tr></thead>
+<tbody><tr><td><span class="tk">AZPS</span>Arizona Public Service<div class="sub">Phoenix metro &middot; last 3mo +14.4% vs prior 3mo +1.2% &middot; weight 0.60</div></td><td class="num pos">+33.1%</td><td class="num pos">▲ +13.1pp</td></tr><tr><td><span class="tk">ERCO</span>ERCOT<div class="sub">Texas &middot; last 3mo +4.9% vs prior 3mo +2.6% &middot; weight 0.70</div></td><td class="num pos">+4.4%</td><td class="num pos">▲ +2.3pp</td></tr><tr><td><span class="tk">SOCO</span>Southern Company<div class="sub">Georgia / Southeast &middot; last 3mo +1.0% vs prior 3mo -3.2% &middot; weight 0.60</div></td><td class="num pos">+2.4%</td><td class="num pos">▲ +4.2pp</td></tr><tr><td><span class="tk">CISO</span>California ISO<div class="sub">California &middot; last 3mo -0.1% vs prior 3mo -3.5% &middot; weight 0.40</div></td><td class="num pos">+1.8%</td><td class="num pos">▲ +3.4pp</td></tr><tr><td><span class="tk">PACW</span>PacifiCorp West<div class="sub">Oregon / Pacific NW &middot; last 3mo -1.7% vs prior 3mo -3.4% &middot; weight 0.50</div></td><td class="num neg">-9.2%</td><td class="num dim">→ +1.7pp</td></tr></tbody></table><div class="dim sm" style="margin-top:10px">No signal this run: Dominion.</div></div>
+
+<div class="foot">
+<b>Method:</b> daily electricity demand for each balancing authority from the EIA API (Hourly Grid Monitor, EIA-930), averaged to monthly, then year-over-year growth and its <i>inflection</i> &mdash; last three months' average YoY minus the prior three. Grids are weighted by an estimate of their datacenter intensity. Pairs with the <a class="inline" href="readthrough.html">read-through</a> (the component/demand pulse from Taiwan): this is the power/capacity side of the same story.<br>
+<b>This is total grid demand as a proxy for datacenter load,</b> not a direct datacenter meter &mdash; it's confounded by weather and economic growth. Year-over-year comparison controls for normal seasonality, but an unusually hot or cold year still moves it; read the cross-grid differences and the inflection, not the absolute level. Weights are estimates.<br>
+<b>Not investment advice</b> &mdash; a research signal that flags where to look, not what to trade.
+</div>
+</div></body></html>
