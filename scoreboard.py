@@ -1,46 +1,58 @@
 """
 Layer 3 - Live winners scoreboard.
-Pulls end-of-day prices for the public NVIDIA-supply-chain names from Stooq
-(free, no API key), computes 1D / 1M / 1Y performance, and writes
+Pulls daily prices for the public NVIDIA-supply-chain names from the FinMind
+open API, computes 1D / 1M / 1Y performance, and writes
 docs/scoreboard.html. Runs unattended in GitHub Actions alongside build.py.
 """
-import csv, io, time, datetime, urllib.request
+import os, json, time, datetime, urllib.request, urllib.parse
 from collections import defaultdict
 
 DOCS = "docs"
+API = "https://api.finmindtrade.com/api/v4/data"
+TOKEN = os.environ.get("FINMIND_TOKEN", "").strip()
+CLOSE_KEYS = ("Close", "close", "Adj_Close", "adj_close", "Adj Close")
 
-# (stooq symbol, display ticker, name, content bucket)
+# (ticker, name, content bucket)
 BASKET = [
-    ("nvda.us", "NVDA", "NVIDIA", "Compute / platform"),
-    ("tsm.us",  "TSM",  "TSMC (ADR)", "Foundry / packaging"),
-    ("mu.us",   "MU",   "Micron", "HBM / memory"),
-    ("vrt.us",  "VRT",  "Vertiv", "Power + cooling"),
-    ("aph.us",  "APH",  "Amphenol", "Copper / connectors"),
-    ("tel.us",  "TEL",  "TE Connectivity", "Copper / connectors"),
-    ("cohr.us", "COHR", "Coherent", "Optical"),
-    ("lite.us", "LITE", "Lumentum", "Optical"),
-    ("fn.us",   "FN",   "Fabrinet", "Optical"),
-    ("alab.us", "ALAB", "Astera Labs", "Retimers / connectivity"),
-    ("crdo.us", "CRDO", "Credo", "Retimers / connectivity"),
-    ("mpwr.us", "MPWR", "Monolithic Power", "Power semis"),
-    ("nvts.us", "NVTS", "Navitas", "Power semis (800V)"),
-    ("on.us",   "ON",   "onsemi", "Power semis"),
+    ("NVDA", "NVIDIA", "Compute / platform"),
+    ("TSM",  "TSMC (ADR)", "Foundry / packaging"),
+    ("MU",   "Micron", "HBM / memory"),
+    ("VRT",  "Vertiv", "Power + cooling"),
+    ("APH",  "Amphenol", "Copper / connectors"),
+    ("TEL",  "TE Connectivity", "Copper / connectors"),
+    ("COHR", "Coherent", "Optical"),
+    ("LITE", "Lumentum", "Optical"),
+    ("FN",   "Fabrinet", "Optical"),
+    ("ALAB", "Astera Labs", "Retimers / connectivity"),
+    ("CRDO", "Credo", "Retimers / connectivity"),
+    ("MPWR", "Monolithic Power", "Power semis"),
+    ("NVTS", "Navitas", "Power semis (800V)"),
+    ("ON",   "onsemi", "Power semis"),
 ]
 
 
-def fetch_closes(symbol):
-    url = f"https://stooq.com/q/d/l/?s={symbol}&i=d"
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+def fetch_closes(ticker, start):
+    params = {"dataset": "USStockPrice", "data_id": ticker, "start_date": start}
+    req = urllib.request.Request(API + "?" + urllib.parse.urlencode(params))
+    if TOKEN:
+        req.add_header("Authorization", f"Bearer {TOKEN}")
     with urllib.request.urlopen(req, timeout=40) as resp:
-        text = resp.read().decode("utf-8", "replace")
-    closes = []
-    for row in csv.DictReader(io.StringIO(text)):
-        c = row.get("Close")
-        try:
-            closes.append(float(c))
-        except (TypeError, ValueError):
-            continue
-    return closes  # oldest -> newest
+        payload = json.loads(resp.read().decode("utf-8"))
+    pairs = []
+    for row in payload.get("data", []) or []:
+        d = row.get("date")
+        c = None
+        for k in CLOSE_KEYS:
+            v = row.get(k)
+            if v not in (None, ""):
+                try:
+                    c = float(v); break
+                except (TypeError, ValueError):
+                    pass
+        if d and c is not None:
+            pairs.append((d, c))
+    pairs.sort()
+    return [c for _, c in pairs]  # oldest -> newest
 
 
 def chg(now, then):
@@ -48,10 +60,11 @@ def chg(now, then):
 
 
 def main():
+    start = (datetime.date.today() - datetime.timedelta(days=800)).isoformat()
     rows, missing = [], []
-    for sym, tk, name, bucket in BASKET:
+    for tk, name, bucket in BASKET:
         try:
-            closes = fetch_closes(sym)
+            closes = fetch_closes(tk, start)
         except Exception as e:
             print(f"[WARN] {tk}: fetch failed ({e})")
             missing.append(tk); time.sleep(0.3); continue
@@ -145,7 +158,7 @@ __NAV__
 <tbody>__BODY__</tbody></table><div class="miss">__MISS__</div></div>
 <div class="foot">
 <b>What this is:</b> the market-performance companion to the <a class="inline" href="index.html">revenue signal</a> and the <a class="inline" href="supplychain.html">content map</a> &mdash; the investable public names in one view, equal-weighted basket averages on top.<br>
-<b>Source:</b> Stooq end-of-day prices (free). Prices are end-of-day, not real-time, and may lag one session.<br>
+<b>Source:</b> daily US prices via the FinMind open API. End-of-day, not real-time; may lag a session.<br>
 <b>Not investment advice.</b> Open research tool.
 </div>
 </div></body></html>"""
