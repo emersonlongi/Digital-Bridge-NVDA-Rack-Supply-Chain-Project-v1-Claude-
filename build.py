@@ -158,7 +158,7 @@ h2{font-size:15px;margin:28px 0 10px}.foot{color:var(--dim);font-size:12px;margi
 .miss{color:var(--neg);font-size:12px;margin-top:8px}
 .nav{display:flex;gap:8px;margin-bottom:22px}.nav a{color:var(--dim);text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;border:1px solid var(--line);border-radius:8px}.nav a.active{color:#fff;background:#1c2638;border-color:#2b3a52}
 </style></head><body><div class="wrap">
-<nav class="nav"><a href="index.html" class="active">Revenue Index</a><a href="supplychain.html">Winning-Content Map</a><a href="scoreboard.html">Live Scoreboard</a><a href="news.html">Supply-Chain News</a><a href="readthrough.html">Read-Through</a></nav>
+<div id="nav"></div><script src="nav.js"></script>
 <h1>Taiwan AI Supply-Chain Revenue Index</h1>
 <p class="sub">Monthly revenue momentum across __NCOMP__ Taiwan-listed NVIDIA-supply-chain names &middot; latest period <b>__PERIOD__</b> &middot; updated __AS_OF__</p>
 <div class="grid">
