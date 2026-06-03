@@ -20,11 +20,13 @@ jobs:
       - name: Build all pages
         env:
           FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
         run: |
           python build.py
           python scoreboard.py
           python news.py
           python readthrough.py
+          python power.py
       - name: Commit updated site
         run: |
           git config user.name  "github-actions[bot]"
