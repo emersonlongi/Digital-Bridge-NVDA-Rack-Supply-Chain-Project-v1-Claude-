@@ -99,7 +99,9 @@ def main():
 
 NAV = ('<nav class="nav"><a href="index.html">Revenue Index</a>'
        '<a href="supplychain.html">Winning-Content Map</a>'
-       '<a href="scoreboard.html" class="active">Live Scoreboard</a></nav>')
+       '<a href="scoreboard.html" class="active">Live Scoreboard</a>'
+       '<a href="news.html">Supply-Chain News</a>'
+       '<a href="readthrough.html">Read-Through</a></nav>')
 
 
 def render_html(d):
