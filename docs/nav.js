@@ -6,7 +6,8 @@
     ["supplychain.html",  "Winning-Content Map"],
     ["scoreboard.html",   "Live Scoreboard"],
     ["news.html",         "Supply-Chain News"],
-    ["readthrough.html",  "Read-Through"]
+    ["readthrough.html",  "Read-Through"],
+    ["power.html",        "Grid Demand Pulse"]
   ];
   var here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   if (here === "") here = "index.html";
