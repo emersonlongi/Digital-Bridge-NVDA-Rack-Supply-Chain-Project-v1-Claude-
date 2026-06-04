@@ -74,17 +74,11 @@ def fetch_items(query):
     return out
 
 
-def rel_age(dt, now):
+def fmt_abs(dt):
+    """Absolute UTC timestamp - always correct no matter when the page is viewed."""
     if not dt:
         return ""
-    secs = (now - dt).total_seconds()
-    if secs < 3600:
-        return f"{max(int(secs // 60), 1)}m ago"
-    if secs < 86400:
-        return f"{int(secs // 3600)}h ago"
-    if secs < 86400 * 14:
-        return f"{int(secs // 86400)}d ago"
-    return f"{int(secs // (86400 * 7))}w ago"
+    return dt.strftime("%b ") + str(dt.day) + dt.strftime(", %H:%M")
 
 
 def main():
@@ -130,11 +124,13 @@ def render_html(sections, now, total):
                 cat = classify(it["title"], it["source"])
                 tag = ('<span class="tag high">High</span>' if cat == "high"
                        else '<span class="tag wild">Wildcard</span>' if cat == "wild" else "")
-                meta = " &middot; ".join(
-                    x for x in (html.escape(it["source"]), rel_age(it["dt"], now)) if x)
+                abs_str = fmt_abs(it["dt"])
+                iso = it["dt"].isoformat() if it["dt"] else ""
+                meta = " &middot; ".join(x for x in (html.escape(it["source"]), abs_str) if x)
+                ago = f'<span class="ago" data-ts="{iso}"></span>' if iso else ""
                 rows += (f'<a class="item {cat}" href="{html.escape(it["link"])}" target="_blank" rel="noopener">'
                          f'<span class="t">{html.escape(it["title"])}{tag}</span>'
-                         f'<span class="m">{meta}</span></a>')
+                         f'<span class="m">{meta}{ago}</span></a>')
         else:
             rows = '<div class="empty">No recent headlines.</div>'
         blocks += f'<section class="theme"><h2>{html.escape(theme)}</h2>{rows}</section>'
@@ -174,9 +170,26 @@ __BLOCKS__
 <div class="foot">
 <b>What this is:</b> a live watch-list of news touching the parts of the stack this project tracks &mdash; roadmap, memory, optics, power, cooling, and the Taiwan supply chain. Pairs with the <a class="inline" href="index.html">revenue signal</a>, <a class="inline" href="scoreboard.html">price scoreboard</a>, and <a class="inline" href="readthrough.html">read-through</a>.<br>
 <b>Colour coding</b> is a keyword/source heuristic: amber = likely-material (production, orders, capacity, $ figures, tier-1 wires), purple = surprising/unconfirmed (breakthroughs, delays, rumours). A guide, not a verdict.<br>
-<b>Source:</b> auto-aggregated from Google News RSS, filtered to these themes. Headlines only &mdash; not analysis, not investment advice.
+<b>Source:</b> auto-aggregated from Google News RSS, filtered to these themes. Headlines only &mdash; not analysis, not investment advice. Dates shown in UTC.
 </div>
-</div></body></html>"""
+</div>
+<script>
+(function(){
+  function ago(ms){
+    var s=Math.max(0,(Date.now()-ms)/1000);
+    if(s<3600)return Math.max(1,Math.floor(s/60))+"m ago";
+    if(s<86400)return Math.floor(s/3600)+"h ago";
+    if(s<86400*14)return Math.floor(s/86400)+"d ago";
+    return Math.floor(s/(86400*7))+"w ago";
+  }
+  var els=document.querySelectorAll(".ago[data-ts]");
+  for(var i=0;i<els.length;i++){
+    var t=Date.parse(els[i].getAttribute("data-ts"));
+    if(!isNaN(t))els[i].textContent=" \u00b7 "+ago(t);
+  }
+})();
+</script>
+</body></html>"""
     return (tpl.replace("__NAV__", NAV).replace("__TOTAL__", str(total))
                .replace("__ASOF__", asof).replace("__BLOCKS__", blocks))
 
