@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-06-03 17:21 UTC",
-  "latest_period": "2026-04",
-  "index_yoy": 49.1,
+  "as_of_utc": "2026-06-04 15:32 UTC",
+  "latest_period": "2026-05",
+  "index_yoy": 49.5,
   "n_companies": 16,
   "buckets": [
     {
@@ -66,7 +66,7 @@
     },
     {
       "bucket": "Connectors / sockets",
-      "yoy": -3.8,
+      "yoy": 1.2,
       "n": 1
     }
   ],
@@ -210,17 +210,13 @@
       "stock_id": "4966",
       "name": "Lotes",
       "bucket": "Connectors / sockets",
-      "period": "2026-04",
-      "revenue": 1268934000.0,
-      "yoy": -3.8,
-      "mom": -14.1
+      "period": "2026-05",
+      "revenue": 1307428000.0,
+      "yoy": 1.2,
+      "mom": 3.0
     }
   ],
   "history": [
-    {
-      "period": "2025-04",
-      "yoy": 54.6
-    },
     {
       "period": "2025-05",
       "yoy": 56.8
@@ -268,6 +264,10 @@
     {
       "period": "2026-04",
       "yoy": 49.2
+    },
+    {
+      "period": "2026-05",
+      "yoy": 1.2
     }
   ],
   "missing": []
