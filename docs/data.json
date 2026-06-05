@@ -1,12 +1,12 @@
 {
-  "as_of_utc": "2026-06-04 16:42 UTC",
+  "as_of_utc": "2026-06-05 16:15 UTC",
   "latest_period": "2026-05",
-  "index_yoy": 49.5,
+  "index_yoy": 45.7,
   "n_companies": 16,
   "buckets": [
     {
       "bucket": "CCL / laminate",
-      "yoy": 93.6,
+      "yoy": 114.6,
       "n": 1
     },
     {
@@ -16,12 +16,7 @@
     },
     {
       "bucket": "BMC",
-      "yoy": 81.6,
-      "n": 1
-    },
-    {
-      "bucket": "Server boards",
-      "yoy": 73.7,
+      "yoy": 68.7,
       "n": 1
     },
     {
@@ -60,6 +55,11 @@
       "n": 1
     },
     {
+      "bucket": "Server boards",
+      "yoy": 5.0,
+      "n": 1
+    },
+    {
       "bucket": "Chassis",
       "yoy": 4.6,
       "n": 1
@@ -81,6 +81,15 @@
       "mom": -6.3
     },
     {
+      "stock_id": "2383",
+      "name": "Elite Material",
+      "bucket": "CCL / laminate",
+      "period": "2026-05",
+      "revenue": 15618565000.0,
+      "yoy": 114.6,
+      "mom": 12.2
+    },
+    {
       "stock_id": "3231",
       "name": "Wistron",
       "bucket": "ODM integration",
@@ -90,33 +99,6 @@
       "mom": -14.9
     },
     {
-      "stock_id": "2383",
-      "name": "Elite Material",
-      "bucket": "CCL / laminate",
-      "period": "2026-04",
-      "revenue": 13923687000.0,
-      "yoy": 93.6,
-      "mom": 15.9
-    },
-    {
-      "stock_id": "5274",
-      "name": "ASPEED",
-      "bucket": "BMC",
-      "period": "2026-04",
-      "revenue": 1279040000.0,
-      "yoy": 81.6,
-      "mom": 3.5
-    },
-    {
-      "stock_id": "2376",
-      "name": "Gigabyte",
-      "bucket": "Server boards",
-      "period": "2026-04",
-      "revenue": 52267730000.0,
-      "yoy": 73.7,
-      "mom": 33.9
-    },
-    {
       "stock_id": "3017",
       "name": "Asia Vital Components",
       "bucket": "Liquid cooling",
@@ -124,6 +106,15 @@
       "revenue": 15631449000.0,
       "yoy": 71.6,
       "mom": -13.2
+    },
+    {
+      "stock_id": "5274",
+      "name": "ASPEED",
+      "bucket": "BMC",
+      "period": "2026-05",
+      "revenue": 1282174000.0,
+      "yoy": 68.7,
+      "mom": 0.2
     },
     {
       "stock_id": "2308",
@@ -198,6 +189,15 @@
       "mom": -1.1
     },
     {
+      "stock_id": "2376",
+      "name": "Gigabyte",
+      "bucket": "Server boards",
+      "period": "2026-05",
+      "revenue": 49053470000.0,
+      "yoy": 5.0,
+      "mom": -6.1
+    },
+    {
       "stock_id": "8210",
       "name": "Chenbro",
       "bucket": "Chassis",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-05",
-      "yoy": 1.2
+      "yoy": 47.4
     }
   ],
   "missing": []
