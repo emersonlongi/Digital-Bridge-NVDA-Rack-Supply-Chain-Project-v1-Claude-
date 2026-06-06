@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-06-05 16:15 UTC",
+  "as_of_utc": "2026-06-06 11:12 UTC",
   "latest_period": "2026-05",
-  "index_yoy": 45.7,
+  "index_yoy": 47.7,
   "n_companies": 16,
   "buckets": [
     {
@@ -30,8 +30,13 @@
       "n": 1
     },
     {
+      "bucket": "Copper interconnect / cable",
+      "yoy": 41.3,
+      "n": 1
+    },
+    {
       "bucket": "Rack integration",
-      "yoy": 29.7,
+      "yoy": 39.6,
       "n": 1
     },
     {
@@ -42,11 +47,6 @@
     {
       "bucket": "Power (PSU)",
       "yoy": 24.5,
-      "n": 1
-    },
-    {
-      "bucket": "Copper interconnect / cable",
-      "yoy": 18.5,
       "n": 1
     },
     {
@@ -126,6 +126,15 @@
       "mom": -1.8
     },
     {
+      "stock_id": "3665",
+      "name": "BizLink",
+      "bucket": "Copper interconnect / cable",
+      "period": "2026-05",
+      "revenue": 7352121000.0,
+      "yoy": 41.3,
+      "mom": -0.4
+    },
+    {
       "stock_id": "3324",
       "name": "Auras Technology",
       "bucket": "Liquid cooling",
@@ -138,10 +147,10 @@
       "stock_id": "2317",
       "name": "Hon Hai (Foxconn)",
       "bucket": "Rack integration",
-      "period": "2026-04",
-      "revenue": 832097956000.0,
-      "yoy": 29.7,
-      "mom": 3.5
+      "period": "2026-05",
+      "revenue": 859409333000.0,
+      "yoy": 39.6,
+      "mom": 3.3
     },
     {
       "stock_id": "6669",
@@ -169,15 +178,6 @@
       "revenue": 16694759000.0,
       "yoy": 24.5,
       "mom": 1.3
-    },
-    {
-      "stock_id": "3665",
-      "name": "BizLink",
-      "bucket": "Copper interconnect / cable",
-      "period": "2026-04",
-      "revenue": 7382955000.0,
-      "yoy": 18.5,
-      "mom": 5.3
     },
     {
       "stock_id": "2330",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-05",
-      "yoy": 47.4
+      "yoy": 45.1
     }
   ],
   "missing": []
