@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-06-07 12:08 UTC",
+  "as_of_utc": "2026-06-08 17:37 UTC",
   "latest_period": "2026-05",
-  "index_yoy": 47.7,
+  "index_yoy": 45.8,
   "n_companies": 16,
   "buckets": [
     {
@@ -10,9 +10,9 @@
       "n": 1
     },
     {
-      "bucket": "ODM integration",
-      "yoy": 87.5,
-      "n": 3
+      "bucket": "Liquid cooling",
+      "yoy": 77.2,
+      "n": 2
     },
     {
       "bucket": "BMC",
@@ -20,9 +20,9 @@
       "n": 1
     },
     {
-      "bucket": "Liquid cooling",
-      "yoy": 56.2,
-      "n": 2
+      "bucket": "ODM integration",
+      "yoy": 50.6,
+      "n": 3
     },
     {
       "bucket": "Power + liquid cooling",
@@ -40,8 +40,13 @@
       "n": 1
     },
     {
+      "bucket": "Chassis",
+      "yoy": 37.3,
+      "n": 1
+    },
+    {
       "bucket": "Substrate / PCB",
-      "yoy": 27.6,
+      "yoy": 32.4,
       "n": 1
     },
     {
@@ -60,26 +65,12 @@
       "n": 1
     },
     {
-      "bucket": "Chassis",
-      "yoy": 4.6,
-      "n": 1
-    },
-    {
       "bucket": "Connectors / sockets",
       "yoy": 1.2,
       "n": 1
     }
   ],
   "companies": [
-    {
-      "stock_id": "2382",
-      "name": "Quanta",
-      "bucket": "ODM integration",
-      "period": "2026-04",
-      "revenue": 339921315000.0,
-      "yoy": 120.7,
-      "mom": -6.3
-    },
     {
       "stock_id": "2383",
       "name": "Elite Material",
@@ -90,22 +81,22 @@
       "mom": 12.2
     },
     {
-      "stock_id": "3231",
-      "name": "Wistron",
+      "stock_id": "2382",
+      "name": "Quanta",
       "bucket": "ODM integration",
-      "period": "2026-04",
-      "revenue": 283437176000.0,
-      "yoy": 112.0,
-      "mom": -14.9
+      "period": "2026-05",
+      "revenue": 311481017000.0,
+      "yoy": 94.4,
+      "mom": -8.4
     },
     {
-      "stock_id": "3017",
-      "name": "Asia Vital Components",
+      "stock_id": "3324",
+      "name": "Auras Technology",
       "bucket": "Liquid cooling",
-      "period": "2026-04",
-      "revenue": 15631449000.0,
-      "yoy": 71.6,
-      "mom": -13.2
+      "period": "2026-05",
+      "revenue": 3138892000.0,
+      "yoy": 93.8,
+      "mom": 10.4
     },
     {
       "stock_id": "5274",
@@ -115,6 +106,15 @@
       "revenue": 1282174000.0,
       "yoy": 68.7,
       "mom": 0.2
+    },
+    {
+      "stock_id": "3017",
+      "name": "Asia Vital Components",
+      "bucket": "Liquid cooling",
+      "period": "2026-05",
+      "revenue": 15871396000.0,
+      "yoy": 60.6,
+      "mom": 1.5
     },
     {
       "stock_id": "2308",
@@ -135,15 +135,6 @@
       "mom": -0.4
     },
     {
-      "stock_id": "3324",
-      "name": "Auras Technology",
-      "bucket": "Liquid cooling",
-      "period": "2026-04",
-      "revenue": 2842339000.0,
-      "yoy": 40.9,
-      "mom": -14.6
-    },
-    {
       "stock_id": "2317",
       "name": "Hon Hai (Foxconn)",
       "bucket": "Rack integration",
@@ -153,22 +144,31 @@
       "mom": 3.3
     },
     {
-      "stock_id": "6669",
-      "name": "Wiwynn",
+      "stock_id": "3231",
+      "name": "Wistron",
       "bucket": "ODM integration",
-      "period": "2026-04",
-      "revenue": 82730996000.0,
-      "yoy": 29.7,
-      "mom": -16.1
+      "period": "2026-05",
+      "revenue": 290183471000.0,
+      "yoy": 39.2,
+      "mom": 2.4
+    },
+    {
+      "stock_id": "8210",
+      "name": "Chenbro",
+      "bucket": "Chassis",
+      "period": "2026-05",
+      "revenue": 2517084000.0,
+      "yoy": 37.3,
+      "mom": 21.8
     },
     {
       "stock_id": "3037",
       "name": "Unimicron",
       "bucket": "Substrate / PCB",
-      "period": "2026-04",
-      "revenue": 13932815000.0,
-      "yoy": 27.6,
-      "mom": 6.5
+      "period": "2026-05",
+      "revenue": 14059973000.0,
+      "yoy": 32.4,
+      "mom": 0.9
     },
     {
       "stock_id": "2301",
@@ -178,6 +178,15 @@
       "revenue": 16694759000.0,
       "yoy": 24.5,
       "mom": 1.3
+    },
+    {
+      "stock_id": "6669",
+      "name": "Wiwynn",
+      "bucket": "ODM integration",
+      "period": "2026-05",
+      "revenue": 84050473000.0,
+      "yoy": 18.2,
+      "mom": 1.6
     },
     {
       "stock_id": "2330",
@@ -196,15 +205,6 @@
       "revenue": 49053470000.0,
       "yoy": 5.0,
       "mom": -6.1
-    },
-    {
-      "stock_id": "8210",
-      "name": "Chenbro",
-      "bucket": "Chassis",
-      "period": "2026-04",
-      "revenue": 2066292000.0,
-      "yoy": 4.6,
-      "mom": -17.6
     },
     {
       "stock_id": "4966",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-05",
-      "yoy": 45.1
+      "yoy": 49.7
     }
   ],
   "missing": []
