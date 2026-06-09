@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-06-08 17:37 UTC",
+  "as_of_utc": "2026-06-09 16:19 UTC",
   "latest_period": "2026-05",
   "index_yoy": 45.8,
   "n_companies": 16,
@@ -26,7 +26,7 @@
     },
     {
       "bucket": "Power + liquid cooling",
-      "yoy": 43.9,
+      "yoy": 43.7,
       "n": 1
     },
     {
@@ -120,10 +120,10 @@
       "stock_id": "2308",
       "name": "Delta Electronics",
       "bucket": "Power + liquid cooling",
-      "period": "2026-04",
-      "revenue": 58691652000.0,
-      "yoy": 43.9,
-      "mom": -1.8
+      "period": "2026-05",
+      "revenue": 58961817000.0,
+      "yoy": 43.7,
+      "mom": 0.5
     },
     {
       "stock_id": "3665",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-05",
-      "yoy": 49.7
+      "yoy": 49.3
     }
   ],
   "missing": []
