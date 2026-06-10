@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-06-09 16:19 UTC",
+  "as_of_utc": "2026-06-10 17:44 UTC",
   "latest_period": "2026-05",
-  "index_yoy": 45.8,
+  "index_yoy": 46.9,
   "n_companies": 16,
   "buckets": [
     {
@@ -50,13 +50,13 @@
       "n": 1
     },
     {
-      "bucket": "Power (PSU)",
-      "yoy": 24.5,
+      "bucket": "Foundry / CoWoS (anchor)",
+      "yoy": 30.1,
       "n": 1
     },
     {
-      "bucket": "Foundry / CoWoS (anchor)",
-      "yoy": 17.5,
+      "bucket": "Power (PSU)",
+      "yoy": 29.6,
       "n": 1
     },
     {
@@ -171,13 +171,22 @@
       "mom": 0.9
     },
     {
+      "stock_id": "2330",
+      "name": "TSMC",
+      "bucket": "Foundry / CoWoS (anchor)",
+      "period": "2026-05",
+      "revenue": 416975163000.0,
+      "yoy": 30.1,
+      "mom": 1.5
+    },
+    {
       "stock_id": "2301",
       "name": "Lite-On Technology",
       "bucket": "Power (PSU)",
-      "period": "2026-04",
-      "revenue": 16694759000.0,
-      "yoy": 24.5,
-      "mom": 1.3
+      "period": "2026-05",
+      "revenue": 17353659000.0,
+      "yoy": 29.6,
+      "mom": 3.9
     },
     {
       "stock_id": "6669",
@@ -187,15 +196,6 @@
       "revenue": 84050473000.0,
       "yoy": 18.2,
       "mom": 1.6
-    },
-    {
-      "stock_id": "2330",
-      "name": "TSMC",
-      "bucket": "Foundry / CoWoS (anchor)",
-      "period": "2026-04",
-      "revenue": 410725118000.0,
-      "yoy": 17.5,
-      "mom": -1.1
     },
     {
       "stock_id": "2376",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-05",
-      "yoy": 49.3
+      "yoy": 46.8
     }
   ],
   "missing": []
