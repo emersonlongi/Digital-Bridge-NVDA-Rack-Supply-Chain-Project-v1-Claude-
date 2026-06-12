@@ -1,8 +1,8 @@
 {
-  "as_of_utc": "2026-06-11 18:01 UTC",
+  "as_of_utc": "2026-06-12 16:34 UTC",
   "latest_period": "2026-05",
-  "index_yoy": 45.9,
-  "n_companies": 15,
+  "index_yoy": 46.9,
+  "n_companies": 16,
   "buckets": [
     {
       "bucket": "CCL / laminate",
@@ -11,8 +11,8 @@
     },
     {
       "bucket": "Liquid cooling",
-      "yoy": 93.8,
-      "n": 1
+      "yoy": 77.2,
+      "n": 2
     },
     {
       "bucket": "BMC",
@@ -106,6 +106,15 @@
       "revenue": 1282174000.0,
       "yoy": 68.7,
       "mom": 0.2
+    },
+    {
+      "stock_id": "3017",
+      "name": "Asia Vital Components",
+      "bucket": "Liquid cooling",
+      "period": "2026-05",
+      "revenue": 15871396000.0,
+      "yoy": 60.6,
+      "mom": 1.5
     },
     {
       "stock_id": "2308",
@@ -210,58 +219,56 @@
   "history": [
     {
       "period": "2025-05",
-      "yoy": 54.8
+      "yoy": 56.8
     },
     {
       "period": "2025-06",
-      "yoy": 42.9
+      "yoy": 45.0
     },
     {
       "period": "2025-07",
-      "yoy": 38.3
+      "yoy": 41.7
     },
     {
       "period": "2025-08",
-      "yoy": 36.4
+      "yoy": 39.8
     },
     {
       "period": "2025-09",
-      "yoy": 42.4
-    },
-    {
-      "period": "2025-10",
-      "yoy": 41.1
-    },
-    {
-      "period": "2025-11",
-      "yoy": 51.5
-    },
-    {
-      "period": "2025-12",
-      "yoy": 57.7
-    },
-    {
-      "period": "2026-01",
-      "yoy": 61.0
-    },
-    {
-      "period": "2026-02",
       "yoy": 47.8
     },
     {
+      "period": "2025-10",
+      "yoy": 46.8
+    },
+    {
+      "period": "2025-11",
+      "yoy": 57.1
+    },
+    {
+      "period": "2025-12",
+      "yoy": 60.9
+    },
+    {
+      "period": "2026-01",
+      "yoy": 66.5
+    },
+    {
+      "period": "2026-02",
+      "yoy": 49.5
+    },
+    {
       "period": "2026-03",
-      "yoy": 50.1
+      "yoy": 54.0
     },
     {
       "period": "2026-04",
-      "yoy": 47.7
+      "yoy": 49.2
     },
     {
       "period": "2026-05",
-      "yoy": 45.9
+      "yoy": 46.8
     }
   ],
-  "missing": [
-    "Asia Vital Components"
-  ]
+  "missing": []
 }
