@@ -1,12 +1,12 @@
 {
-  "as_of_utc": "2026-07-02 12:32 UTC",
-  "latest_period": "2026-05",
-  "index_yoy": 46.9,
+  "as_of_utc": "2026-07-03 12:30 UTC",
+  "latest_period": "2026-06",
+  "index_yoy": 47.2,
   "n_companies": 16,
   "buckets": [
     {
       "bucket": "CCL / laminate",
-      "yoy": 114.6,
+      "yoy": 120.7,
       "n": 1
     },
     {
@@ -16,7 +16,7 @@
     },
     {
       "bucket": "BMC",
-      "yoy": 68.7,
+      "yoy": 67.5,
       "n": 1
     },
     {
@@ -75,10 +75,10 @@
       "stock_id": "2383",
       "name": "Elite Material",
       "bucket": "CCL / laminate",
-      "period": "2026-05",
-      "revenue": 15618565000.0,
-      "yoy": 114.6,
-      "mom": 12.2
+      "period": "2026-06",
+      "revenue": 17732956000.0,
+      "yoy": 120.7,
+      "mom": 13.5
     },
     {
       "stock_id": "2382",
@@ -102,10 +102,10 @@
       "stock_id": "5274",
       "name": "ASPEED",
       "bucket": "BMC",
-      "period": "2026-05",
-      "revenue": 1282174000.0,
-      "yoy": 68.7,
-      "mom": 0.2
+      "period": "2026-06",
+      "revenue": 1310195000.0,
+      "yoy": 67.5,
+      "mom": 2.2
     },
     {
       "stock_id": "3017",
@@ -218,10 +218,6 @@
   ],
   "history": [
     {
-      "period": "2025-05",
-      "yoy": 56.8
-    },
-    {
       "period": "2025-06",
       "yoy": 45.0
     },
@@ -268,6 +264,10 @@
     {
       "period": "2026-05",
       "yoy": 46.8
+    },
+    {
+      "period": "2026-06",
+      "yoy": 94.1
     }
   ],
   "missing": []
