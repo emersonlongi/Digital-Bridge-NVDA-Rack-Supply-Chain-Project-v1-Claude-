@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-07-05 08:48 UTC",
+  "as_of_utc": "2026-07-06 10:13 UTC",
   "latest_period": "2026-06",
-  "index_yoy": 47.2,
+  "index_yoy": 47.9,
   "n_companies": 16,
   "buckets": [
     {
@@ -20,6 +20,11 @@
       "n": 1
     },
     {
+      "bucket": "Rack integration",
+      "yoy": 52.1,
+      "n": 1
+    },
+    {
       "bucket": "ODM integration",
       "yoy": 50.6,
       "n": 3
@@ -32,11 +37,6 @@
     {
       "bucket": "Copper interconnect / cable",
       "yoy": 41.3,
-      "n": 1
-    },
-    {
-      "bucket": "Rack integration",
-      "yoy": 39.6,
       "n": 1
     },
     {
@@ -117,6 +117,15 @@
       "mom": 1.5
     },
     {
+      "stock_id": "2317",
+      "name": "Hon Hai (Foxconn)",
+      "bucket": "Rack integration",
+      "period": "2026-06",
+      "revenue": 821762936000.0,
+      "yoy": 52.1,
+      "mom": -4.4
+    },
+    {
       "stock_id": "2308",
       "name": "Delta Electronics",
       "bucket": "Power + liquid cooling",
@@ -133,15 +142,6 @@
       "revenue": 7352121000.0,
       "yoy": 41.3,
       "mom": -0.4
-    },
-    {
-      "stock_id": "2317",
-      "name": "Hon Hai (Foxconn)",
-      "bucket": "Rack integration",
-      "period": "2026-05",
-      "revenue": 859409333000.0,
-      "yoy": 39.6,
-      "mom": 3.3
     },
     {
       "stock_id": "3231",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-06",
-      "yoy": 94.1
+      "yoy": 80.1
     }
   ],
   "missing": []
