@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-07-06 10:13 UTC",
+  "as_of_utc": "2026-07-06 20:23 UTC",
   "latest_period": "2026-06",
-  "index_yoy": 47.9,
+  "index_yoy": 49.4,
   "n_companies": 16,
   "buckets": [
     {
@@ -20,6 +20,11 @@
       "n": 1
     },
     {
+      "bucket": "Copper interconnect / cable",
+      "yoy": 63.8,
+      "n": 1
+    },
+    {
       "bucket": "Rack integration",
       "yoy": 52.1,
       "n": 1
@@ -32,11 +37,6 @@
     {
       "bucket": "Power + liquid cooling",
       "yoy": 43.7,
-      "n": 1
-    },
-    {
-      "bucket": "Copper interconnect / cable",
-      "yoy": 41.3,
       "n": 1
     },
     {
@@ -108,6 +108,15 @@
       "mom": 2.2
     },
     {
+      "stock_id": "3665",
+      "name": "BizLink",
+      "bucket": "Copper interconnect / cable",
+      "period": "2026-06",
+      "revenue": 8518109000.0,
+      "yoy": 63.8,
+      "mom": 15.9
+    },
+    {
       "stock_id": "3017",
       "name": "Asia Vital Components",
       "bucket": "Liquid cooling",
@@ -133,15 +142,6 @@
       "revenue": 58961817000.0,
       "yoy": 43.7,
       "mom": 0.5
-    },
-    {
-      "stock_id": "3665",
-      "name": "BizLink",
-      "bucket": "Copper interconnect / cable",
-      "period": "2026-05",
-      "revenue": 7352121000.0,
-      "yoy": 41.3,
-      "mom": -0.4
     },
     {
       "stock_id": "3231",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-06",
-      "yoy": 80.1
+      "yoy": 76.0
     }
   ],
   "missing": []
