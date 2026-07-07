@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-07-06 20:23 UTC",
+  "as_of_utc": "2026-07-07 09:36 UTC",
   "latest_period": "2026-06",
-  "index_yoy": 49.4,
+  "index_yoy": 54.0,
   "n_companies": 16,
   "buckets": [
     {
@@ -10,8 +10,13 @@
       "n": 1
     },
     {
+      "bucket": "Chassis",
+      "yoy": 98.0,
+      "n": 1
+    },
+    {
       "bucket": "Liquid cooling",
-      "yoy": 77.2,
+      "yoy": 79.9,
       "n": 2
     },
     {
@@ -25,23 +30,18 @@
       "n": 1
     },
     {
+      "bucket": "ODM integration",
+      "yoy": 53.4,
+      "n": 3
+    },
+    {
       "bucket": "Rack integration",
       "yoy": 52.1,
       "n": 1
     },
     {
-      "bucket": "ODM integration",
-      "yoy": 50.6,
-      "n": 3
-    },
-    {
       "bucket": "Power + liquid cooling",
       "yoy": 43.7,
-      "n": 1
-    },
-    {
-      "bucket": "Chassis",
-      "yoy": 37.3,
       "n": 1
     },
     {
@@ -84,10 +84,19 @@
       "stock_id": "2382",
       "name": "Quanta",
       "bucket": "ODM integration",
-      "period": "2026-05",
-      "revenue": 311481017000.0,
-      "yoy": 94.4,
-      "mom": -8.4
+      "period": "2026-06",
+      "revenue": 385190820000.0,
+      "yoy": 102.9,
+      "mom": 23.7
+    },
+    {
+      "stock_id": "8210",
+      "name": "Chenbro",
+      "bucket": "Chassis",
+      "period": "2026-06",
+      "revenue": 3237664000.0,
+      "yoy": 98.0,
+      "mom": 28.6
     },
     {
       "stock_id": "3324",
@@ -108,6 +117,15 @@
       "mom": 2.2
     },
     {
+      "stock_id": "3017",
+      "name": "Asia Vital Components",
+      "bucket": "Liquid cooling",
+      "period": "2026-06",
+      "revenue": 17618119000.0,
+      "yoy": 66.1,
+      "mom": 11.0
+    },
+    {
       "stock_id": "3665",
       "name": "BizLink",
       "bucket": "Copper interconnect / cable",
@@ -115,15 +133,6 @@
       "revenue": 8518109000.0,
       "yoy": 63.8,
       "mom": 15.9
-    },
-    {
-      "stock_id": "3017",
-      "name": "Asia Vital Components",
-      "bucket": "Liquid cooling",
-      "period": "2026-05",
-      "revenue": 15871396000.0,
-      "yoy": 60.6,
-      "mom": 1.5
     },
     {
       "stock_id": "2317",
@@ -151,15 +160,6 @@
       "revenue": 290183471000.0,
       "yoy": 39.2,
       "mom": 2.4
-    },
-    {
-      "stock_id": "8210",
-      "name": "Chenbro",
-      "bucket": "Chassis",
-      "period": "2026-05",
-      "revenue": 2517084000.0,
-      "yoy": 37.3,
-      "mom": 21.8
     },
     {
       "stock_id": "3037",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-06",
-      "yoy": 76.0
+      "yoy": 81.6
     }
   ],
   "missing": []
