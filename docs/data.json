@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-07-07 09:36 UTC",
+  "as_of_utc": "2026-07-08 08:23 UTC",
   "latest_period": "2026-06",
-  "index_yoy": 54.0,
+  "index_yoy": 54.6,
   "n_companies": 16,
   "buckets": [
     {
@@ -15,14 +15,14 @@
       "n": 1
     },
     {
-      "bucket": "Liquid cooling",
-      "yoy": 79.9,
-      "n": 2
-    },
-    {
       "bucket": "BMC",
       "yoy": 67.5,
       "n": 1
+    },
+    {
+      "bucket": "Liquid cooling",
+      "yoy": 64.1,
+      "n": 2
     },
     {
       "bucket": "Copper interconnect / cable",
@@ -31,7 +31,7 @@
     },
     {
       "bucket": "ODM integration",
-      "yoy": 53.4,
+      "yoy": 62.2,
       "n": 3
     },
     {
@@ -46,7 +46,7 @@
     },
     {
       "bucket": "Substrate / PCB",
-      "yoy": 32.4,
+      "yoy": 36.3,
       "n": 1
     },
     {
@@ -60,13 +60,13 @@
       "n": 1
     },
     {
-      "bucket": "Server boards",
-      "yoy": 5.0,
+      "bucket": "Connectors / sockets",
+      "yoy": 12.2,
       "n": 1
     },
     {
-      "bucket": "Connectors / sockets",
-      "yoy": 1.2,
+      "bucket": "Server boards",
+      "yoy": 5.0,
       "n": 1
     }
   ],
@@ -99,15 +99,6 @@
       "mom": 28.6
     },
     {
-      "stock_id": "3324",
-      "name": "Auras Technology",
-      "bucket": "Liquid cooling",
-      "period": "2026-05",
-      "revenue": 3138892000.0,
-      "yoy": 93.8,
-      "mom": 10.4
-    },
-    {
       "stock_id": "5274",
       "name": "ASPEED",
       "bucket": "BMC",
@@ -135,6 +126,24 @@
       "mom": 15.9
     },
     {
+      "stock_id": "3324",
+      "name": "Auras Technology",
+      "bucket": "Liquid cooling",
+      "period": "2026-06",
+      "revenue": 2718035000.0,
+      "yoy": 62.1,
+      "mom": -13.4
+    },
+    {
+      "stock_id": "3231",
+      "name": "Wistron",
+      "bucket": "ODM integration",
+      "period": "2026-06",
+      "revenue": 321821969000.0,
+      "yoy": 53.8,
+      "mom": 10.9
+    },
+    {
       "stock_id": "2317",
       "name": "Hon Hai (Foxconn)",
       "bucket": "Rack integration",
@@ -153,22 +162,13 @@
       "mom": 0.5
     },
     {
-      "stock_id": "3231",
-      "name": "Wistron",
-      "bucket": "ODM integration",
-      "period": "2026-05",
-      "revenue": 290183471000.0,
-      "yoy": 39.2,
-      "mom": 2.4
-    },
-    {
       "stock_id": "3037",
       "name": "Unimicron",
       "bucket": "Substrate / PCB",
-      "period": "2026-05",
-      "revenue": 14059973000.0,
-      "yoy": 32.4,
-      "mom": 0.9
+      "period": "2026-06",
+      "revenue": 14897030000.0,
+      "yoy": 36.3,
+      "mom": 6.0
     },
     {
       "stock_id": "2330",
@@ -180,6 +180,15 @@
       "mom": 1.5
     },
     {
+      "stock_id": "6669",
+      "name": "Wiwynn",
+      "bucket": "ODM integration",
+      "period": "2026-06",
+      "revenue": 111371123000.0,
+      "yoy": 29.8,
+      "mom": 32.5
+    },
+    {
       "stock_id": "2301",
       "name": "Lite-On Technology",
       "bucket": "Power (PSU)",
@@ -189,13 +198,13 @@
       "mom": 3.9
     },
     {
-      "stock_id": "6669",
-      "name": "Wiwynn",
-      "bucket": "ODM integration",
-      "period": "2026-05",
-      "revenue": 84050473000.0,
-      "yoy": 18.2,
-      "mom": 1.6
+      "stock_id": "4966",
+      "name": "Lotes",
+      "bucket": "Connectors / sockets",
+      "period": "2026-06",
+      "revenue": 1672372000.0,
+      "yoy": 12.2,
+      "mom": 27.9
     },
     {
       "stock_id": "2376",
@@ -205,15 +214,6 @@
       "revenue": 49053470000.0,
       "yoy": 5.0,
       "mom": -6.1
-    },
-    {
-      "stock_id": "4966",
-      "name": "Lotes",
-      "bucket": "Connectors / sockets",
-      "period": "2026-05",
-      "revenue": 1307428000.0,
-      "yoy": 1.2,
-      "mom": 3.0
     }
   ],
   "history": [
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-06",
-      "yoy": 81.6
+      "yoy": 63.8
     }
   ],
   "missing": []
