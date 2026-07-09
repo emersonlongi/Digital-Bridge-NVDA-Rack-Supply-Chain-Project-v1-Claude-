@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-07-08 08:23 UTC",
+  "as_of_utc": "2026-07-09 09:34 UTC",
   "latest_period": "2026-06",
-  "index_yoy": 54.6,
+  "index_yoy": 59.8,
   "n_companies": 16,
   "buckets": [
     {
@@ -12,6 +12,11 @@
     {
       "bucket": "Chassis",
       "yoy": 98.0,
+      "n": 1
+    },
+    {
+      "bucket": "Server boards",
+      "yoy": 68.6,
       "n": 1
     },
     {
@@ -35,13 +40,18 @@
       "n": 3
     },
     {
+      "bucket": "Power + liquid cooling",
+      "yoy": 55.4,
+      "n": 1
+    },
+    {
       "bucket": "Rack integration",
       "yoy": 52.1,
       "n": 1
     },
     {
-      "bucket": "Power + liquid cooling",
-      "yoy": 43.7,
+      "bucket": "Power (PSU)",
+      "yoy": 37.0,
       "n": 1
     },
     {
@@ -55,18 +65,8 @@
       "n": 1
     },
     {
-      "bucket": "Power (PSU)",
-      "yoy": 29.6,
-      "n": 1
-    },
-    {
       "bucket": "Connectors / sockets",
       "yoy": 12.2,
-      "n": 1
-    },
-    {
-      "bucket": "Server boards",
-      "yoy": 5.0,
       "n": 1
     }
   ],
@@ -97,6 +97,15 @@
       "revenue": 3237664000.0,
       "yoy": 98.0,
       "mom": 28.6
+    },
+    {
+      "stock_id": "2376",
+      "name": "Gigabyte",
+      "bucket": "Server boards",
+      "period": "2026-06",
+      "revenue": 42892460000.0,
+      "yoy": 68.6,
+      "mom": -12.6
     },
     {
       "stock_id": "5274",
@@ -135,6 +144,15 @@
       "mom": -13.4
     },
     {
+      "stock_id": "2308",
+      "name": "Delta Electronics",
+      "bucket": "Power + liquid cooling",
+      "period": "2026-06",
+      "revenue": 65602611000.0,
+      "yoy": 55.4,
+      "mom": 11.3
+    },
+    {
       "stock_id": "3231",
       "name": "Wistron",
       "bucket": "ODM integration",
@@ -153,13 +171,13 @@
       "mom": -4.4
     },
     {
-      "stock_id": "2308",
-      "name": "Delta Electronics",
-      "bucket": "Power + liquid cooling",
-      "period": "2026-05",
-      "revenue": 58961817000.0,
-      "yoy": 43.7,
-      "mom": 0.5
+      "stock_id": "2301",
+      "name": "Lite-On Technology",
+      "bucket": "Power (PSU)",
+      "period": "2026-06",
+      "revenue": 18655552000.0,
+      "yoy": 37.0,
+      "mom": 7.5
     },
     {
       "stock_id": "3037",
@@ -189,15 +207,6 @@
       "mom": 32.5
     },
     {
-      "stock_id": "2301",
-      "name": "Lite-On Technology",
-      "bucket": "Power (PSU)",
-      "period": "2026-05",
-      "revenue": 17353659000.0,
-      "yoy": 29.6,
-      "mom": 3.9
-    },
-    {
       "stock_id": "4966",
       "name": "Lotes",
       "bucket": "Connectors / sockets",
@@ -205,15 +214,6 @@
       "revenue": 1672372000.0,
       "yoy": 12.2,
       "mom": 27.9
-    },
-    {
-      "stock_id": "2376",
-      "name": "Gigabyte",
-      "bucket": "Server boards",
-      "period": "2026-05",
-      "revenue": 49053470000.0,
-      "yoy": 5.0,
-      "mom": -6.1
     }
   ],
   "history": [
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-06",
-      "yoy": 63.8
+      "yoy": 61.8
     }
   ],
   "missing": []
