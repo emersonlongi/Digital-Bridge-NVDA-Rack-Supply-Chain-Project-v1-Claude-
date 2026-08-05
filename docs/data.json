@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-08-04 08:31 UTC",
-  "latest_period": "2026-06",
-  "index_yoy": 62.1,
+  "as_of_utc": "2026-08-05 08:30 UTC",
+  "latest_period": "2026-07",
+  "index_yoy": 65.5,
   "n_companies": 16,
   "buckets": [
     {
@@ -13,6 +13,11 @@
       "bucket": "Chassis",
       "yoy": 98.0,
       "n": 1
+    },
+    {
+      "bucket": "Liquid cooling",
+      "yoy": 91.4,
+      "n": 2
     },
     {
       "bucket": "Server boards",
@@ -28,11 +33,6 @@
       "bucket": "BMC",
       "yoy": 67.5,
       "n": 1
-    },
-    {
-      "bucket": "Liquid cooling",
-      "yoy": 64.1,
-      "n": 2
     },
     {
       "bucket": "Copper interconnect / cable",
@@ -79,6 +79,15 @@
       "revenue": 17732956000.0,
       "yoy": 120.7,
       "mom": 13.5
+    },
+    {
+      "stock_id": "3324",
+      "name": "Auras Technology",
+      "bucket": "Liquid cooling",
+      "period": "2026-07",
+      "revenue": 3765466000.0,
+      "yoy": 116.7,
+      "mom": 38.5
     },
     {
       "stock_id": "2382",
@@ -142,15 +151,6 @@
       "revenue": 8518109000.0,
       "yoy": 63.8,
       "mom": 15.9
-    },
-    {
-      "stock_id": "3324",
-      "name": "Auras Technology",
-      "bucket": "Liquid cooling",
-      "period": "2026-06",
-      "revenue": 2718035000.0,
-      "yoy": 62.1,
-      "mom": -13.4
     },
     {
       "stock_id": "2308",
@@ -218,10 +218,6 @@
   ],
   "history": [
     {
-      "period": "2025-06",
-      "yoy": 45.0
-    },
-    {
       "period": "2025-07",
       "yoy": 41.7
     },
@@ -268,6 +264,10 @@
     {
       "period": "2026-06",
       "yoy": 62.1
+    },
+    {
+      "period": "2026-07",
+      "yoy": 116.7
     }
   ],
   "missing": []
