@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-08-05 08:30 UTC",
+  "as_of_utc": "2026-08-06 08:30 UTC",
   "latest_period": "2026-07",
-  "index_yoy": 65.5,
+  "index_yoy": 66.1,
   "n_companies": 16,
   "buckets": [
     {
@@ -12,6 +12,11 @@
     {
       "bucket": "Chassis",
       "yoy": 98.0,
+      "n": 1
+    },
+    {
+      "bucket": "BMC",
+      "yoy": 97.6,
       "n": 1
     },
     {
@@ -30,19 +35,14 @@
       "n": 1
     },
     {
-      "bucket": "BMC",
-      "yoy": 67.5,
-      "n": 1
-    },
-    {
-      "bucket": "Copper interconnect / cable",
-      "yoy": 63.8,
-      "n": 1
-    },
-    {
       "bucket": "ODM integration",
       "yoy": 62.2,
       "n": 3
+    },
+    {
+      "bucket": "Copper interconnect / cable",
+      "yoy": 59.6,
+      "n": 1
     },
     {
       "bucket": "Power + liquid cooling",
@@ -66,7 +66,7 @@
     },
     {
       "bucket": "Connectors / sockets",
-      "yoy": 12.2,
+      "yoy": -4.3,
       "n": 1
     }
   ],
@@ -108,6 +108,15 @@
       "mom": 28.6
     },
     {
+      "stock_id": "5274",
+      "name": "ASPEED",
+      "bucket": "BMC",
+      "period": "2026-07",
+      "revenue": 1524018000.0,
+      "yoy": 97.6,
+      "mom": 16.3
+    },
+    {
       "stock_id": "2376",
       "name": "Gigabyte",
       "bucket": "Server boards",
@@ -126,15 +135,6 @@
       "mom": 6.2
     },
     {
-      "stock_id": "5274",
-      "name": "ASPEED",
-      "bucket": "BMC",
-      "period": "2026-06",
-      "revenue": 1310195000.0,
-      "yoy": 67.5,
-      "mom": 2.2
-    },
-    {
       "stock_id": "3017",
       "name": "Asia Vital Components",
       "bucket": "Liquid cooling",
@@ -147,10 +147,10 @@
       "stock_id": "3665",
       "name": "BizLink",
       "bucket": "Copper interconnect / cable",
-      "period": "2026-06",
-      "revenue": 8518109000.0,
-      "yoy": 63.8,
-      "mom": 15.9
+      "period": "2026-07",
+      "revenue": 9630165000.0,
+      "yoy": 59.6,
+      "mom": 13.1
     },
     {
       "stock_id": "2308",
@@ -210,10 +210,10 @@
       "stock_id": "4966",
       "name": "Lotes",
       "bucket": "Connectors / sockets",
-      "period": "2026-06",
-      "revenue": 1672372000.0,
-      "yoy": 12.2,
-      "mom": 27.9
+      "period": "2026-07",
+      "revenue": 1353309000.0,
+      "yoy": -4.3,
+      "mom": -19.1
     }
   ],
   "history": [
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-07",
-      "yoy": 116.7
+      "yoy": 67.4
     }
   ],
   "missing": []
