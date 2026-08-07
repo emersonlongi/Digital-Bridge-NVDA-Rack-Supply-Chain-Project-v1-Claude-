@@ -1,17 +1,12 @@
 {
-  "as_of_utc": "2026-08-06 08:30 UTC",
+  "as_of_utc": "2026-08-07 07:10 UTC",
   "latest_period": "2026-07",
-  "index_yoy": 66.1,
+  "index_yoy": 63.3,
   "n_companies": 16,
   "buckets": [
     {
       "bucket": "CCL / laminate",
-      "yoy": 120.7,
-      "n": 1
-    },
-    {
-      "bucket": "Chassis",
-      "yoy": 98.0,
+      "yoy": 129.4,
       "n": 1
     },
     {
@@ -51,7 +46,12 @@
     },
     {
       "bucket": "Rack integration",
-      "yoy": 52.1,
+      "yoy": 54.2,
+      "n": 1
+    },
+    {
+      "bucket": "Chassis",
+      "yoy": 41.5,
       "n": 1
     },
     {
@@ -75,10 +75,10 @@
       "stock_id": "2383",
       "name": "Elite Material",
       "bucket": "CCL / laminate",
-      "period": "2026-06",
-      "revenue": 17732956000.0,
-      "yoy": 120.7,
-      "mom": 13.5
+      "period": "2026-07",
+      "revenue": 19206698000.0,
+      "yoy": 129.4,
+      "mom": 8.3
     },
     {
       "stock_id": "3324",
@@ -97,15 +97,6 @@
       "revenue": 385190820000.0,
       "yoy": 102.9,
       "mom": 23.7
-    },
-    {
-      "stock_id": "8210",
-      "name": "Chenbro",
-      "bucket": "Chassis",
-      "period": "2026-06",
-      "revenue": 3237664000.0,
-      "yoy": 98.0,
-      "mom": 28.6
     },
     {
       "stock_id": "5274",
@@ -162,6 +153,15 @@
       "mom": 11.3
     },
     {
+      "stock_id": "2317",
+      "name": "Hon Hai (Foxconn)",
+      "bucket": "Rack integration",
+      "period": "2026-07",
+      "revenue": 946512543000.0,
+      "yoy": 54.2,
+      "mom": 15.2
+    },
+    {
       "stock_id": "3231",
       "name": "Wistron",
       "bucket": "ODM integration",
@@ -171,13 +171,13 @@
       "mom": 10.9
     },
     {
-      "stock_id": "2317",
-      "name": "Hon Hai (Foxconn)",
-      "bucket": "Rack integration",
-      "period": "2026-06",
-      "revenue": 821762936000.0,
-      "yoy": 52.1,
-      "mom": -4.4
+      "stock_id": "8210",
+      "name": "Chenbro",
+      "bucket": "Chassis",
+      "period": "2026-07",
+      "revenue": 2462300000.0,
+      "yoy": 41.5,
+      "mom": -23.9
     },
     {
       "stock_id": "2301",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-07",
-      "yoy": 67.4
+      "yoy": 70.7
     }
   ],
   "missing": []
