@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-08-07 07:10 UTC",
+  "as_of_utc": "2026-08-08 06:45 UTC",
   "latest_period": "2026-07",
-  "index_yoy": 63.3,
+  "index_yoy": 65.4,
   "n_companies": 16,
   "buckets": [
     {
@@ -16,13 +16,13 @@
     },
     {
       "bucket": "Liquid cooling",
-      "yoy": 91.4,
+      "yoy": 87.0,
       "n": 2
     },
     {
-      "bucket": "Server boards",
-      "yoy": 68.6,
-      "n": 1
+      "bucket": "ODM integration",
+      "yoy": 77.1,
+      "n": 3
     },
     {
       "bucket": "Foundry / CoWoS (anchor)",
@@ -30,9 +30,9 @@
       "n": 1
     },
     {
-      "bucket": "ODM integration",
-      "yoy": 62.2,
-      "n": 3
+      "bucket": "Server boards",
+      "yoy": 59.7,
+      "n": 1
     },
     {
       "bucket": "Copper interconnect / cable",
@@ -50,6 +50,11 @@
       "n": 1
     },
     {
+      "bucket": "Substrate / PCB",
+      "yoy": 43.7,
+      "n": 1
+    },
+    {
       "bucket": "Chassis",
       "yoy": 41.5,
       "n": 1
@@ -60,17 +65,21 @@
       "n": 1
     },
     {
-      "bucket": "Substrate / PCB",
-      "yoy": 36.3,
-      "n": 1
-    },
-    {
       "bucket": "Connectors / sockets",
       "yoy": -4.3,
       "n": 1
     }
   ],
   "companies": [
+    {
+      "stock_id": "2382",
+      "name": "Quanta",
+      "bucket": "ODM integration",
+      "period": "2026-07",
+      "revenue": 366274080000.0,
+      "yoy": 131.3,
+      "mom": -4.9
+    },
     {
       "stock_id": "2383",
       "name": "Elite Material",
@@ -90,15 +99,6 @@
       "mom": 38.5
     },
     {
-      "stock_id": "2382",
-      "name": "Quanta",
-      "bucket": "ODM integration",
-      "period": "2026-06",
-      "revenue": 385190820000.0,
-      "yoy": 102.9,
-      "mom": 23.7
-    },
-    {
       "stock_id": "5274",
       "name": "ASPEED",
       "bucket": "BMC",
@@ -106,15 +106,6 @@
       "revenue": 1524018000.0,
       "yoy": 97.6,
       "mom": 16.3
-    },
-    {
-      "stock_id": "2376",
-      "name": "Gigabyte",
-      "bucket": "Server boards",
-      "period": "2026-06",
-      "revenue": 42892460000.0,
-      "yoy": 68.6,
-      "mom": -12.6
     },
     {
       "stock_id": "2330",
@@ -126,13 +117,22 @@
       "mom": 6.2
     },
     {
-      "stock_id": "3017",
-      "name": "Asia Vital Components",
-      "bucket": "Liquid cooling",
-      "period": "2026-06",
-      "revenue": 17618119000.0,
-      "yoy": 66.1,
-      "mom": 11.0
+      "stock_id": "3231",
+      "name": "Wistron",
+      "bucket": "ODM integration",
+      "period": "2026-07",
+      "revenue": 308219198000.0,
+      "yoy": 60.8,
+      "mom": -4.2
+    },
+    {
+      "stock_id": "2376",
+      "name": "Gigabyte",
+      "bucket": "Server boards",
+      "period": "2026-07",
+      "revenue": 44213037000.0,
+      "yoy": 59.7,
+      "mom": 3.1
     },
     {
       "stock_id": "3665",
@@ -142,6 +142,15 @@
       "revenue": 9630165000.0,
       "yoy": 59.6,
       "mom": 13.1
+    },
+    {
+      "stock_id": "3017",
+      "name": "Asia Vital Components",
+      "bucket": "Liquid cooling",
+      "period": "2026-07",
+      "revenue": 18590152000.0,
+      "yoy": 57.4,
+      "mom": 5.5
     },
     {
       "stock_id": "2308",
@@ -162,13 +171,13 @@
       "mom": 15.2
     },
     {
-      "stock_id": "3231",
-      "name": "Wistron",
-      "bucket": "ODM integration",
-      "period": "2026-06",
-      "revenue": 321821969000.0,
-      "yoy": 53.8,
-      "mom": 10.9
+      "stock_id": "3037",
+      "name": "Unimicron",
+      "bucket": "Substrate / PCB",
+      "period": "2026-07",
+      "revenue": 16253637000.0,
+      "yoy": 43.7,
+      "mom": 9.1
     },
     {
       "stock_id": "8210",
@@ -180,6 +189,15 @@
       "mom": -23.9
     },
     {
+      "stock_id": "6669",
+      "name": "Wiwynn",
+      "bucket": "ODM integration",
+      "period": "2026-07",
+      "revenue": 117685530000.0,
+      "yoy": 39.2,
+      "mom": 5.7
+    },
+    {
       "stock_id": "2301",
       "name": "Lite-On Technology",
       "bucket": "Power (PSU)",
@@ -187,24 +205,6 @@
       "revenue": 18655552000.0,
       "yoy": 37.0,
       "mom": 7.5
-    },
-    {
-      "stock_id": "3037",
-      "name": "Unimicron",
-      "bucket": "Substrate / PCB",
-      "period": "2026-06",
-      "revenue": 14897030000.0,
-      "yoy": 36.3,
-      "mom": 6.0
-    },
-    {
-      "stock_id": "6669",
-      "name": "Wiwynn",
-      "bucket": "ODM integration",
-      "period": "2026-06",
-      "revenue": 111371123000.0,
-      "yoy": 29.8,
-      "mom": 32.5
     },
     {
       "stock_id": "4966",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-07",
-      "yoy": 70.7
+      "yoy": 68.2
     }
   ],
   "missing": []
