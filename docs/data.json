@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-08-10 07:25 UTC",
+  "as_of_utc": "2026-08-11 07:01 UTC",
   "latest_period": "2026-07",
-  "index_yoy": 65.4,
+  "index_yoy": 63.6,
   "n_companies": 16,
   "buckets": [
     {
@@ -25,11 +25,6 @@
       "n": 3
     },
     {
-      "bucket": "Foundry / CoWoS (anchor)",
-      "yoy": 67.9,
-      "n": 1
-    },
-    {
       "bucket": "Server boards",
       "yoy": 59.7,
       "n": 1
@@ -40,13 +35,18 @@
       "n": 1
     },
     {
-      "bucket": "Power + liquid cooling",
-      "yoy": 55.4,
+      "bucket": "Rack integration",
+      "yoy": 54.2,
       "n": 1
     },
     {
-      "bucket": "Rack integration",
-      "yoy": 54.2,
+      "bucket": "Power + liquid cooling",
+      "yoy": 47.7,
+      "n": 1
+    },
+    {
+      "bucket": "Foundry / CoWoS (anchor)",
+      "yoy": 44.7,
       "n": 1
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "bucket": "Power (PSU)",
-      "yoy": 37.0,
+      "yoy": 37.6,
       "n": 1
     },
     {
@@ -108,15 +108,6 @@
       "mom": 16.3
     },
     {
-      "stock_id": "2330",
-      "name": "TSMC",
-      "bucket": "Foundry / CoWoS (anchor)",
-      "period": "2026-06",
-      "revenue": 442679969000.0,
-      "yoy": 67.9,
-      "mom": 6.2
-    },
-    {
       "stock_id": "3231",
       "name": "Wistron",
       "bucket": "ODM integration",
@@ -153,15 +144,6 @@
       "mom": 5.5
     },
     {
-      "stock_id": "2308",
-      "name": "Delta Electronics",
-      "bucket": "Power + liquid cooling",
-      "period": "2026-06",
-      "revenue": 65602611000.0,
-      "yoy": 55.4,
-      "mom": 11.3
-    },
-    {
       "stock_id": "2317",
       "name": "Hon Hai (Foxconn)",
       "bucket": "Rack integration",
@@ -169,6 +151,24 @@
       "revenue": 946512543000.0,
       "yoy": 54.2,
       "mom": 15.2
+    },
+    {
+      "stock_id": "2308",
+      "name": "Delta Electronics",
+      "bucket": "Power + liquid cooling",
+      "period": "2026-07",
+      "revenue": 67073192000.0,
+      "yoy": 47.7,
+      "mom": 2.2
+    },
+    {
+      "stock_id": "2330",
+      "name": "TSMC",
+      "bucket": "Foundry / CoWoS (anchor)",
+      "period": "2026-07",
+      "revenue": 467580548000.0,
+      "yoy": 44.7,
+      "mom": 5.6
     },
     {
       "stock_id": "3037",
@@ -201,10 +201,10 @@
       "stock_id": "2301",
       "name": "Lite-On Technology",
       "bucket": "Power (PSU)",
-      "period": "2026-06",
-      "revenue": 18655552000.0,
-      "yoy": 37.0,
-      "mom": 7.5
+      "period": "2026-07",
+      "revenue": 19005536000.0,
+      "yoy": 37.6,
+      "mom": 1.9
     },
     {
       "stock_id": "4966",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-07",
-      "yoy": 68.2
+      "yoy": 63.5
     }
   ],
   "missing": []
