@@ -1,17 +1,17 @@
 {
-  "as_of_utc": "2026-09-03 10:38 UTC",
-  "latest_period": "2026-07",
-  "index_yoy": 63.6,
+  "as_of_utc": "2026-09-04 10:32 UTC",
+  "latest_period": "2026-08",
+  "index_yoy": 65.2,
   "n_companies": 16,
   "buckets": [
     {
       "bucket": "CCL / laminate",
-      "yoy": 129.4,
+      "yoy": 129.8,
       "n": 1
     },
     {
       "bucket": "BMC",
-      "yoy": 97.6,
+      "yoy": 118.4,
       "n": 1
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "bucket": "Connectors / sockets",
-      "yoy": -4.3,
+      "yoy": 0.2,
       "n": 1
     }
   ],
@@ -84,10 +84,19 @@
       "stock_id": "2383",
       "name": "Elite Material",
       "bucket": "CCL / laminate",
-      "period": "2026-07",
-      "revenue": 19206698000.0,
-      "yoy": 129.4,
-      "mom": 8.3
+      "period": "2026-08",
+      "revenue": 20145589000.0,
+      "yoy": 129.8,
+      "mom": 4.9
+    },
+    {
+      "stock_id": "5274",
+      "name": "ASPEED",
+      "bucket": "BMC",
+      "period": "2026-08",
+      "revenue": 1625937000.0,
+      "yoy": 118.4,
+      "mom": 6.7
     },
     {
       "stock_id": "3324",
@@ -97,15 +106,6 @@
       "revenue": 3765466000.0,
       "yoy": 116.7,
       "mom": 38.5
-    },
-    {
-      "stock_id": "5274",
-      "name": "ASPEED",
-      "bucket": "BMC",
-      "period": "2026-07",
-      "revenue": 1524018000.0,
-      "yoy": 97.6,
-      "mom": 16.3
     },
     {
       "stock_id": "3231",
@@ -210,17 +210,13 @@
       "stock_id": "4966",
       "name": "Lotes",
       "bucket": "Connectors / sockets",
-      "period": "2026-07",
-      "revenue": 1353309000.0,
-      "yoy": -4.3,
-      "mom": -19.1
+      "period": "2026-08",
+      "revenue": 1326834000.0,
+      "yoy": 0.2,
+      "mom": -2.0
     }
   ],
   "history": [
-    {
-      "period": "2025-07",
-      "yoy": 41.7
-    },
     {
       "period": "2025-08",
       "yoy": 39.8
@@ -268,6 +264,10 @@
     {
       "period": "2026-07",
       "yoy": 63.5
+    },
+    {
+      "period": "2026-08",
+      "yoy": 82.8
     }
   ],
   "missing": []
