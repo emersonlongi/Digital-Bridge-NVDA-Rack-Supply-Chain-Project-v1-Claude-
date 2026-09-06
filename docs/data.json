@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-09-05 09:55 UTC",
+  "as_of_utc": "2026-09-06 10:13 UTC",
   "latest_period": "2026-08",
-  "index_yoy": 64.8,
+  "index_yoy": 64.7,
   "n_companies": 16,
   "buckets": [
     {
@@ -30,13 +30,13 @@
       "n": 1
     },
     {
-      "bucket": "Rack integration",
-      "yoy": 54.2,
+      "bucket": "Copper interconnect / cable",
+      "yoy": 54.0,
       "n": 1
     },
     {
-      "bucket": "Copper interconnect / cable",
-      "yoy": 54.0,
+      "bucket": "Rack integration",
+      "yoy": 52.0,
       "n": 1
     },
     {
@@ -135,15 +135,6 @@
       "mom": 5.5
     },
     {
-      "stock_id": "2317",
-      "name": "Hon Hai (Foxconn)",
-      "bucket": "Rack integration",
-      "period": "2026-07",
-      "revenue": 946512543000.0,
-      "yoy": 54.2,
-      "mom": 15.2
-    },
-    {
       "stock_id": "3665",
       "name": "BizLink",
       "bucket": "Copper interconnect / cable",
@@ -151,6 +142,15 @@
       "revenue": 8891805000.0,
       "yoy": 54.0,
       "mom": -7.7
+    },
+    {
+      "stock_id": "2317",
+      "name": "Hon Hai (Foxconn)",
+      "bucket": "Rack integration",
+      "period": "2026-08",
+      "revenue": 921766023000.0,
+      "yoy": 52.0,
+      "mom": -2.6
     },
     {
       "stock_id": "2308",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-08",
-      "yoy": 75.6
+      "yoy": 70.9
     }
   ],
   "missing": []
