@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-09-06 10:13 UTC",
+  "as_of_utc": "2026-09-07 11:31 UTC",
   "latest_period": "2026-08",
-  "index_yoy": 64.7,
+  "index_yoy": 64.5,
   "n_companies": 16,
   "buckets": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "bucket": "Liquid cooling",
-      "yoy": 87.0,
+      "yoy": 85.5,
       "n": 2
     },
     {
@@ -129,10 +129,10 @@
       "stock_id": "3017",
       "name": "Asia Vital Components",
       "bucket": "Liquid cooling",
-      "period": "2026-07",
-      "revenue": 18590152000.0,
-      "yoy": 57.4,
-      "mom": 5.5
+      "period": "2026-08",
+      "revenue": 19481068000.0,
+      "yoy": 54.3,
+      "mom": 4.8
     },
     {
       "stock_id": "3665",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-08",
-      "yoy": 70.9
+      "yoy": 68.1
     }
   ],
   "missing": []
