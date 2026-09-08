@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-09-07 11:31 UTC",
+  "as_of_utc": "2026-09-08 10:32 UTC",
   "latest_period": "2026-08",
-  "index_yoy": 64.5,
+  "index_yoy": 68.2,
   "n_companies": 16,
   "buckets": [
     {
@@ -15,18 +15,23 @@
       "n": 1
     },
     {
-      "bucket": "Liquid cooling",
-      "yoy": 85.5,
-      "n": 2
+      "bucket": "Server boards",
+      "yoy": 98.4,
+      "n": 1
     },
     {
       "bucket": "ODM integration",
-      "yoy": 77.1,
+      "yoy": 96.2,
       "n": 3
     },
     {
-      "bucket": "Server boards",
-      "yoy": 59.7,
+      "bucket": "Liquid cooling",
+      "yoy": 60.8,
+      "n": 2
+    },
+    {
+      "bucket": "Substrate / PCB",
+      "yoy": 56.3,
       "n": 1
     },
     {
@@ -50,11 +55,6 @@
       "n": 1
     },
     {
-      "bucket": "Substrate / PCB",
-      "yoy": 43.7,
-      "n": 1
-    },
-    {
       "bucket": "Chassis",
       "yoy": 41.5,
       "n": 1
@@ -75,10 +75,10 @@
       "stock_id": "2382",
       "name": "Quanta",
       "bucket": "ODM integration",
-      "period": "2026-07",
-      "revenue": 366274080000.0,
-      "yoy": 131.3,
-      "mom": -4.9
+      "period": "2026-08",
+      "revenue": 423970932000.0,
+      "yoy": 177.5,
+      "mom": 15.8
     },
     {
       "stock_id": "2383",
@@ -99,13 +99,22 @@
       "mom": 6.7
     },
     {
+      "stock_id": "2376",
+      "name": "Gigabyte",
+      "bucket": "Server boards",
+      "period": "2026-08",
+      "revenue": 47400848000.0,
+      "yoy": 98.4,
+      "mom": 7.2
+    },
+    {
       "stock_id": "3324",
       "name": "Auras Technology",
       "bucket": "Liquid cooling",
-      "period": "2026-07",
-      "revenue": 3765466000.0,
-      "yoy": 116.7,
-      "mom": 38.5
+      "period": "2026-08",
+      "revenue": 3141249000.0,
+      "yoy": 67.2,
+      "mom": -16.6
     },
     {
       "stock_id": "3231",
@@ -117,13 +126,13 @@
       "mom": -4.2
     },
     {
-      "stock_id": "2376",
-      "name": "Gigabyte",
-      "bucket": "Server boards",
-      "period": "2026-07",
-      "revenue": 44213037000.0,
-      "yoy": 59.7,
-      "mom": 3.1
+      "stock_id": "3037",
+      "name": "Unimicron",
+      "bucket": "Substrate / PCB",
+      "period": "2026-08",
+      "revenue": 17745519000.0,
+      "yoy": 56.3,
+      "mom": 9.2
     },
     {
       "stock_id": "3017",
@@ -153,6 +162,15 @@
       "mom": -2.6
     },
     {
+      "stock_id": "6669",
+      "name": "Wiwynn",
+      "bucket": "ODM integration",
+      "period": "2026-08",
+      "revenue": 144311808000.0,
+      "yoy": 50.4,
+      "mom": 22.6
+    },
+    {
       "stock_id": "2308",
       "name": "Delta Electronics",
       "bucket": "Power + liquid cooling",
@@ -171,15 +189,6 @@
       "mom": 5.6
     },
     {
-      "stock_id": "3037",
-      "name": "Unimicron",
-      "bucket": "Substrate / PCB",
-      "period": "2026-07",
-      "revenue": 16253637000.0,
-      "yoy": 43.7,
-      "mom": 9.1
-    },
-    {
       "stock_id": "8210",
       "name": "Chenbro",
       "bucket": "Chassis",
@@ -187,15 +196,6 @@
       "revenue": 2462300000.0,
       "yoy": 41.5,
       "mom": -23.9
-    },
-    {
-      "stock_id": "6669",
-      "name": "Wiwynn",
-      "bucket": "ODM integration",
-      "period": "2026-07",
-      "revenue": 117685530000.0,
-      "yoy": 39.2,
-      "mom": 5.7
     },
     {
       "stock_id": "2301",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-08",
-      "yoy": 68.1
+      "yoy": 78.0
     }
   ],
   "missing": []
