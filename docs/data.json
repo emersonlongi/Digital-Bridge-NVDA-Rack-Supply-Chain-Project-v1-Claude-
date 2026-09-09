@@ -1,9 +1,14 @@
 {
-  "as_of_utc": "2026-09-08 10:32 UTC",
+  "as_of_utc": "2026-09-09 10:44 UTC",
   "latest_period": "2026-08",
-  "index_yoy": 68.2,
+  "index_yoy": 73.1,
   "n_companies": 16,
   "buckets": [
+    {
+      "bucket": "ODM integration",
+      "yoy": 131.5,
+      "n": 3
+    },
     {
       "bucket": "CCL / laminate",
       "yoy": 129.8,
@@ -18,11 +23,6 @@
       "bucket": "Server boards",
       "yoy": 98.4,
       "n": 1
-    },
-    {
-      "bucket": "ODM integration",
-      "yoy": 96.2,
-      "n": 3
     },
     {
       "bucket": "Liquid cooling",
@@ -45,23 +45,23 @@
       "n": 1
     },
     {
-      "bucket": "Power + liquid cooling",
-      "yoy": 47.7,
-      "n": 1
-    },
-    {
       "bucket": "Foundry / CoWoS (anchor)",
       "yoy": 44.7,
       "n": 1
     },
     {
       "bucket": "Chassis",
-      "yoy": 41.5,
+      "yoy": 40.5,
+      "n": 1
+    },
+    {
+      "bucket": "Power + liquid cooling",
+      "yoy": 34.9,
       "n": 1
     },
     {
       "bucket": "Power (PSU)",
-      "yoy": 37.6,
+      "yoy": 25.2,
       "n": 1
     },
     {
@@ -79,6 +79,15 @@
       "revenue": 423970932000.0,
       "yoy": 177.5,
       "mom": 15.8
+    },
+    {
+      "stock_id": "3231",
+      "name": "Wistron",
+      "bucket": "ODM integration",
+      "period": "2026-08",
+      "revenue": 460065063000.0,
+      "yoy": 166.5,
+      "mom": 49.3
     },
     {
       "stock_id": "2383",
@@ -115,15 +124,6 @@
       "revenue": 3141249000.0,
       "yoy": 67.2,
       "mom": -16.6
-    },
-    {
-      "stock_id": "3231",
-      "name": "Wistron",
-      "bucket": "ODM integration",
-      "period": "2026-07",
-      "revenue": 308219198000.0,
-      "yoy": 60.8,
-      "mom": -4.2
     },
     {
       "stock_id": "3037",
@@ -171,15 +171,6 @@
       "mom": 22.6
     },
     {
-      "stock_id": "2308",
-      "name": "Delta Electronics",
-      "bucket": "Power + liquid cooling",
-      "period": "2026-07",
-      "revenue": 67073192000.0,
-      "yoy": 47.7,
-      "mom": 2.2
-    },
-    {
       "stock_id": "2330",
       "name": "TSMC",
       "bucket": "Foundry / CoWoS (anchor)",
@@ -192,19 +183,28 @@
       "stock_id": "8210",
       "name": "Chenbro",
       "bucket": "Chassis",
-      "period": "2026-07",
-      "revenue": 2462300000.0,
-      "yoy": 41.5,
-      "mom": -23.9
+      "period": "2026-08",
+      "revenue": 2456984000.0,
+      "yoy": 40.5,
+      "mom": -0.2
+    },
+    {
+      "stock_id": "2308",
+      "name": "Delta Electronics",
+      "bucket": "Power + liquid cooling",
+      "period": "2026-08",
+      "revenue": 64586049000.0,
+      "yoy": 34.9,
+      "mom": -3.7
     },
     {
       "stock_id": "2301",
       "name": "Lite-On Technology",
       "bucket": "Power (PSU)",
-      "period": "2026-07",
-      "revenue": 19005536000.0,
-      "yoy": 37.6,
-      "mom": 1.9
+      "period": "2026-08",
+      "revenue": 19592400000.0,
+      "yoy": 25.2,
+      "mom": 3.1
     },
     {
       "stock_id": "4966",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-08",
-      "yoy": 78.0
+      "yoy": 75.0
     }
   ],
   "missing": []
