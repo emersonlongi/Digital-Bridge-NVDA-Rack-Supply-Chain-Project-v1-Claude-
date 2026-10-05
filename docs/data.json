@@ -1,22 +1,22 @@
 {
-  "as_of_utc": "2026-10-04 11:45 UTC",
-  "latest_period": "2026-08",
-  "index_yoy": 73.7,
+  "as_of_utc": "2026-10-05 13:32 UTC",
+  "latest_period": "2026-09",
+  "index_yoy": 74.5,
   "n_companies": 16,
   "buckets": [
+    {
+      "bucket": "CCL / laminate",
+      "yoy": 168.9,
+      "n": 1
+    },
     {
       "bucket": "ODM integration",
       "yoy": 131.5,
       "n": 3
     },
     {
-      "bucket": "CCL / laminate",
-      "yoy": 129.8,
-      "n": 1
-    },
-    {
       "bucket": "BMC",
-      "yoy": 118.4,
+      "yoy": 100.9,
       "n": 1
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "bucket": "Connectors / sockets",
-      "yoy": 0.2,
+      "yoy": -8.3,
       "n": 1
     }
   ],
@@ -81,6 +81,15 @@
       "mom": 15.8
     },
     {
+      "stock_id": "2383",
+      "name": "Elite Material",
+      "bucket": "CCL / laminate",
+      "period": "2026-09",
+      "revenue": 21532230000.0,
+      "yoy": 168.9,
+      "mom": 6.9
+    },
+    {
       "stock_id": "3231",
       "name": "Wistron",
       "bucket": "ODM integration",
@@ -90,22 +99,13 @@
       "mom": 49.3
     },
     {
-      "stock_id": "2383",
-      "name": "Elite Material",
-      "bucket": "CCL / laminate",
-      "period": "2026-08",
-      "revenue": 20145589000.0,
-      "yoy": 129.8,
-      "mom": 4.9
-    },
-    {
       "stock_id": "5274",
       "name": "ASPEED",
       "bucket": "BMC",
-      "period": "2026-08",
-      "revenue": 1625937000.0,
-      "yoy": 118.4,
-      "mom": 6.7
+      "period": "2026-09",
+      "revenue": 1636326000.0,
+      "yoy": 100.9,
+      "mom": 0.6
     },
     {
       "stock_id": "2376",
@@ -210,17 +210,13 @@
       "stock_id": "4966",
       "name": "Lotes",
       "bucket": "Connectors / sockets",
-      "period": "2026-08",
-      "revenue": 1326834000.0,
-      "yoy": 0.2,
-      "mom": -2.0
+      "period": "2026-09",
+      "revenue": 1503134000.0,
+      "yoy": -8.3,
+      "mom": 13.3
     }
   ],
   "history": [
-    {
-      "period": "2025-08",
-      "yoy": 39.8
-    },
     {
       "period": "2025-09",
       "yoy": 47.8
@@ -268,6 +264,10 @@
     {
       "period": "2026-08",
       "yoy": 73.7
+    },
+    {
+      "period": "2026-09",
+      "yoy": 87.2
     }
   ],
   "missing": []
