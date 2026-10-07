@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-10-06 12:43 UTC",
+  "as_of_utc": "2026-10-07 12:36 UTC",
   "latest_period": "2026-09",
-  "index_yoy": 72.7,
+  "index_yoy": 73.8,
   "n_companies": 16,
   "buckets": [
     {
@@ -15,24 +15,24 @@
       "n": 3
     },
     {
+      "bucket": "Server boards",
+      "yoy": 125.4,
+      "n": 1
+    },
+    {
       "bucket": "BMC",
       "yoy": 100.9,
       "n": 1
     },
     {
-      "bucket": "Server boards",
-      "yoy": 98.4,
+      "bucket": "Substrate / PCB",
+      "yoy": 56.3,
       "n": 1
     },
     {
       "bucket": "Liquid cooling",
-      "yoy": 60.8,
+      "yoy": 56.0,
       "n": 2
-    },
-    {
-      "bucket": "Substrate / PCB",
-      "yoy": 56.3,
-      "n": 1
     },
     {
       "bucket": "Foundry / CoWoS (anchor)",
@@ -99,6 +99,15 @@
       "mom": 49.3
     },
     {
+      "stock_id": "2376",
+      "name": "Gigabyte",
+      "bucket": "Server boards",
+      "period": "2026-09",
+      "revenue": 63099342000.0,
+      "yoy": 125.4,
+      "mom": 33.1
+    },
+    {
       "stock_id": "5274",
       "name": "ASPEED",
       "bucket": "BMC",
@@ -106,15 +115,6 @@
       "revenue": 1636326000.0,
       "yoy": 100.9,
       "mom": 0.6
-    },
-    {
-      "stock_id": "2376",
-      "name": "Gigabyte",
-      "bucket": "Server boards",
-      "period": "2026-08",
-      "revenue": 47400848000.0,
-      "yoy": 98.4,
-      "mom": 7.2
     },
     {
       "stock_id": "3324",
@@ -135,15 +135,6 @@
       "mom": 9.2
     },
     {
-      "stock_id": "3017",
-      "name": "Asia Vital Components",
-      "bucket": "Liquid cooling",
-      "period": "2026-08",
-      "revenue": 19481068000.0,
-      "yoy": 54.3,
-      "mom": 4.8
-    },
-    {
       "stock_id": "2330",
       "name": "TSMC",
       "bucket": "Foundry / CoWoS (anchor)",
@@ -160,6 +151,15 @@
       "revenue": 144311808000.0,
       "yoy": 50.4,
       "mom": 22.6
+    },
+    {
+      "stock_id": "3017",
+      "name": "Asia Vital Components",
+      "bucket": "Liquid cooling",
+      "period": "2026-09",
+      "revenue": 21018128000.0,
+      "yoy": 44.9,
+      "mom": 7.9
     },
     {
       "stock_id": "8210",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-09",
-      "yoy": 67.8
+      "yoy": 72.8
     }
   ],
   "missing": []
