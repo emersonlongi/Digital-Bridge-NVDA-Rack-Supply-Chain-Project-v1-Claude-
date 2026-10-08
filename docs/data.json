@@ -1,18 +1,13 @@
 {
-  "as_of_utc": "2026-10-07 12:36 UTC",
+  "as_of_utc": "2026-10-08 12:46 UTC",
   "latest_period": "2026-09",
-  "index_yoy": 73.8,
+  "index_yoy": 63.0,
   "n_companies": 16,
   "buckets": [
     {
       "bucket": "CCL / laminate",
       "yoy": 168.9,
       "n": 1
-    },
-    {
-      "bucket": "ODM integration",
-      "yoy": 131.5,
-      "n": 3
     },
     {
       "bucket": "Server boards",
@@ -25,18 +20,18 @@
       "n": 1
     },
     {
+      "bucket": "ODM integration",
+      "yoy": 88.0,
+      "n": 3
+    },
+    {
       "bucket": "Substrate / PCB",
       "yoy": 56.3,
       "n": 1
     },
     {
-      "bucket": "Liquid cooling",
-      "yoy": 56.0,
-      "n": 2
-    },
-    {
       "bucket": "Foundry / CoWoS (anchor)",
-      "yoy": 53.3,
+      "yoy": 54.6,
       "n": 1
     },
     {
@@ -60,6 +55,11 @@
       "n": 1
     },
     {
+      "bucket": "Liquid cooling",
+      "yoy": 34.0,
+      "n": 2
+    },
+    {
       "bucket": "Power (PSU)",
       "yoy": 25.2,
       "n": 1
@@ -72,15 +72,6 @@
   ],
   "companies": [
     {
-      "stock_id": "2382",
-      "name": "Quanta",
-      "bucket": "ODM integration",
-      "period": "2026-08",
-      "revenue": 423970932000.0,
-      "yoy": 177.5,
-      "mom": 15.8
-    },
-    {
       "stock_id": "2383",
       "name": "Elite Material",
       "bucket": "CCL / laminate",
@@ -88,15 +79,6 @@
       "revenue": 21532230000.0,
       "yoy": 168.9,
       "mom": 6.9
-    },
-    {
-      "stock_id": "3231",
-      "name": "Wistron",
-      "bucket": "ODM integration",
-      "period": "2026-08",
-      "revenue": 460065063000.0,
-      "yoy": 166.5,
-      "mom": 49.3
     },
     {
       "stock_id": "2376",
@@ -117,13 +99,31 @@
       "mom": 0.6
     },
     {
-      "stock_id": "3324",
-      "name": "Auras Technology",
-      "bucket": "Liquid cooling",
-      "period": "2026-08",
-      "revenue": 3141249000.0,
-      "yoy": 67.2,
-      "mom": -16.6
+      "stock_id": "6669",
+      "name": "Wiwynn",
+      "bucket": "ODM integration",
+      "period": "2026-09",
+      "revenue": 172620352000.0,
+      "yoy": 100.0,
+      "mom": 19.6
+    },
+    {
+      "stock_id": "3231",
+      "name": "Wistron",
+      "bucket": "ODM integration",
+      "period": "2026-09",
+      "revenue": 380806168000.0,
+      "yoy": 87.2,
+      "mom": -17.2
+    },
+    {
+      "stock_id": "2382",
+      "name": "Quanta",
+      "bucket": "ODM integration",
+      "period": "2026-09",
+      "revenue": 325299509000.0,
+      "yoy": 76.7,
+      "mom": -23.3
     },
     {
       "stock_id": "3037",
@@ -138,19 +138,10 @@
       "stock_id": "2330",
       "name": "TSMC",
       "bucket": "Foundry / CoWoS (anchor)",
-      "period": "2026-08",
-      "revenue": 514805337000.0,
-      "yoy": 53.3,
-      "mom": 10.1
-    },
-    {
-      "stock_id": "6669",
-      "name": "Wiwynn",
-      "bucket": "ODM integration",
-      "period": "2026-08",
-      "revenue": 144311808000.0,
-      "yoy": 50.4,
-      "mom": 22.6
+      "period": "2026-09",
+      "revenue": 511857399000.0,
+      "yoy": 54.6,
+      "mom": -0.6
     },
     {
       "stock_id": "3017",
@@ -205,6 +196,15 @@
       "revenue": 19592400000.0,
       "yoy": 25.2,
       "mom": 3.1
+    },
+    {
+      "stock_id": "3324",
+      "name": "Auras Technology",
+      "bucket": "Liquid cooling",
+      "period": "2026-09",
+      "revenue": 2884061000.0,
+      "yoy": 23.2,
+      "mom": -8.2
     },
     {
       "stock_id": "4966",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-09",
-      "yoy": 72.8
+      "yoy": 70.9
     }
   ],
   "missing": []
