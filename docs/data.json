@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-10-08 12:46 UTC",
+  "as_of_utc": "2026-10-09 12:32 UTC",
   "latest_period": "2026-09",
-  "index_yoy": 63.0,
+  "index_yoy": 61.7,
   "n_companies": 16,
   "buckets": [
     {
@@ -26,17 +26,12 @@
     },
     {
       "bucket": "Substrate / PCB",
-      "yoy": 56.3,
+      "yoy": 64.7,
       "n": 1
     },
     {
       "bucket": "Foundry / CoWoS (anchor)",
       "yoy": 54.6,
-      "n": 1
-    },
-    {
-      "bucket": "Chassis",
-      "yoy": 40.5,
       "n": 1
     },
     {
@@ -61,7 +56,12 @@
     },
     {
       "bucket": "Power (PSU)",
-      "yoy": 25.2,
+      "yoy": 22.1,
+      "n": 1
+    },
+    {
+      "bucket": "Chassis",
+      "yoy": 13.8,
       "n": 1
     },
     {
@@ -129,10 +129,10 @@
       "stock_id": "3037",
       "name": "Unimicron",
       "bucket": "Substrate / PCB",
-      "period": "2026-08",
-      "revenue": 17745519000.0,
-      "yoy": 56.3,
-      "mom": 9.2
+      "period": "2026-09",
+      "revenue": 18650679000.0,
+      "yoy": 64.7,
+      "mom": 5.1
     },
     {
       "stock_id": "2330",
@@ -151,15 +151,6 @@
       "revenue": 21018128000.0,
       "yoy": 44.9,
       "mom": 7.9
-    },
-    {
-      "stock_id": "8210",
-      "name": "Chenbro",
-      "bucket": "Chassis",
-      "period": "2026-08",
-      "revenue": 2456984000.0,
-      "yoy": 40.5,
-      "mom": -0.2
     },
     {
       "stock_id": "3665",
@@ -189,15 +180,6 @@
       "mom": -3.7
     },
     {
-      "stock_id": "2301",
-      "name": "Lite-On Technology",
-      "bucket": "Power (PSU)",
-      "period": "2026-08",
-      "revenue": 19592400000.0,
-      "yoy": 25.2,
-      "mom": 3.1
-    },
-    {
       "stock_id": "3324",
       "name": "Auras Technology",
       "bucket": "Liquid cooling",
@@ -205,6 +187,24 @@
       "revenue": 2884061000.0,
       "yoy": 23.2,
       "mom": -8.2
+    },
+    {
+      "stock_id": "2301",
+      "name": "Lite-On Technology",
+      "bucket": "Power (PSU)",
+      "period": "2026-09",
+      "revenue": 18848445000.0,
+      "yoy": 22.1,
+      "mom": -3.8
+    },
+    {
+      "stock_id": "8210",
+      "name": "Chenbro",
+      "bucket": "Chassis",
+      "period": "2026-09",
+      "revenue": 2475728000.0,
+      "yoy": 13.8,
+      "mom": 0.8
     },
     {
       "stock_id": "4966",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-09",
-      "yoy": 70.9
+      "yoy": 63.4
     }
   ],
   "missing": []
