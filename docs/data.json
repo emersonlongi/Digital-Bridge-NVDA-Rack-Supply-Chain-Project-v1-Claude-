@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-10-12 14:22 UTC",
+  "as_of_utc": "2026-10-13 13:31 UTC",
   "latest_period": "2026-09",
-  "index_yoy": 61.7,
+  "index_yoy": 60.4,
   "n_companies": 16,
   "buckets": [
     {
@@ -45,11 +45,6 @@
       "n": 1
     },
     {
-      "bucket": "Power + liquid cooling",
-      "yoy": 34.9,
-      "n": 1
-    },
-    {
       "bucket": "Liquid cooling",
       "yoy": 34.0,
       "n": 2
@@ -57,6 +52,11 @@
     {
       "bucket": "Power (PSU)",
       "yoy": 22.1,
+      "n": 1
+    },
+    {
+      "bucket": "Power + liquid cooling",
+      "yoy": 14.6,
       "n": 1
     },
     {
@@ -171,15 +171,6 @@
       "mom": 25.7
     },
     {
-      "stock_id": "2308",
-      "name": "Delta Electronics",
-      "bucket": "Power + liquid cooling",
-      "period": "2026-08",
-      "revenue": 64586049000.0,
-      "yoy": 34.9,
-      "mom": -3.7
-    },
-    {
       "stock_id": "3324",
       "name": "Auras Technology",
       "bucket": "Liquid cooling",
@@ -196,6 +187,15 @@
       "revenue": 18848445000.0,
       "yoy": 22.1,
       "mom": -3.8
+    },
+    {
+      "stock_id": "2308",
+      "name": "Delta Electronics",
+      "bucket": "Power + liquid cooling",
+      "period": "2026-09",
+      "revenue": 65399563000.0,
+      "yoy": 14.6,
+      "mom": 1.3
     },
     {
       "stock_id": "8210",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-09",
-      "yoy": 63.4
+      "yoy": 60.4
     }
   ],
   "missing": []
