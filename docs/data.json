@@ -1,22 +1,22 @@
 {
-  "as_of_utc": "2026-11-04 13:44 UTC",
-  "latest_period": "2026-09",
-  "index_yoy": 60.4,
+  "as_of_utc": "2026-11-05 13:57 UTC",
+  "latest_period": "2026-10",
+  "index_yoy": 65.4,
   "n_companies": 16,
   "buckets": [
     {
       "bucket": "CCL / laminate",
-      "yoy": 168.9,
+      "yoy": 203.1,
+      "n": 1
+    },
+    {
+      "bucket": "BMC",
+      "yoy": 177.8,
       "n": 1
     },
     {
       "bucket": "Server boards",
       "yoy": 125.4,
-      "n": 1
-    },
-    {
-      "bucket": "BMC",
-      "yoy": 100.9,
       "n": 1
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "bucket": "Connectors / sockets",
-      "yoy": -8.3,
+      "yoy": -39.4,
       "n": 1
     }
   ],
@@ -75,10 +75,19 @@
       "stock_id": "2383",
       "name": "Elite Material",
       "bucket": "CCL / laminate",
-      "period": "2026-09",
-      "revenue": 21532230000.0,
-      "yoy": 168.9,
-      "mom": 6.9
+      "period": "2026-10",
+      "revenue": 24472758000.0,
+      "yoy": 203.1,
+      "mom": 13.7
+    },
+    {
+      "stock_id": "5274",
+      "name": "ASPEED",
+      "bucket": "BMC",
+      "period": "2026-10",
+      "revenue": 2029553000.0,
+      "yoy": 177.8,
+      "mom": 24.0
     },
     {
       "stock_id": "2376",
@@ -88,15 +97,6 @@
       "revenue": 63099342000.0,
       "yoy": 125.4,
       "mom": 33.1
-    },
-    {
-      "stock_id": "5274",
-      "name": "ASPEED",
-      "bucket": "BMC",
-      "period": "2026-09",
-      "revenue": 1636326000.0,
-      "yoy": 100.9,
-      "mom": 0.6
     },
     {
       "stock_id": "6669",
@@ -210,17 +210,13 @@
       "stock_id": "4966",
       "name": "Lotes",
       "bucket": "Connectors / sockets",
-      "period": "2026-09",
-      "revenue": 1503134000.0,
-      "yoy": -8.3,
-      "mom": 13.3
+      "period": "2026-10",
+      "revenue": 674478000.0,
+      "yoy": -39.4,
+      "mom": -55.1
     }
   ],
   "history": [
-    {
-      "period": "2025-09",
-      "yoy": 47.8
-    },
     {
       "period": "2025-10",
       "yoy": 46.8
@@ -268,6 +264,10 @@
     {
       "period": "2026-09",
       "yoy": 60.4
+    },
+    {
+      "period": "2026-10",
+      "yoy": 113.8
     }
   ],
   "missing": []
