@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-11-07 12:24 UTC",
+  "as_of_utc": "2026-11-08 12:43 UTC",
   "latest_period": "2026-10",
-  "index_yoy": 71.5,
+  "index_yoy": 70.8,
   "n_companies": 16,
   "buckets": [
     {
@@ -46,7 +46,7 @@
     },
     {
       "bucket": "Liquid cooling",
-      "yoy": 44.8,
+      "yoy": 39.5,
       "n": 2
     },
     {
@@ -162,15 +162,6 @@
       "mom": 12.7
     },
     {
-      "stock_id": "3017",
-      "name": "Asia Vital Components",
-      "bucket": "Liquid cooling",
-      "period": "2026-09",
-      "revenue": 21018128000.0,
-      "yoy": 44.9,
-      "mom": 7.9
-    },
-    {
       "stock_id": "3324",
       "name": "Auras Technology",
       "bucket": "Liquid cooling",
@@ -178,6 +169,15 @@
       "revenue": 3372007000.0,
       "yoy": 44.7,
       "mom": 16.9
+    },
+    {
+      "stock_id": "3017",
+      "name": "Asia Vital Components",
+      "bucket": "Liquid cooling",
+      "period": "2026-10",
+      "revenue": 22102758000.0,
+      "yoy": 34.4,
+      "mom": 5.2
     },
     {
       "stock_id": "2301",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-10",
-      "yoy": 84.6
+      "yoy": 80.4
     }
   ],
   "missing": []
