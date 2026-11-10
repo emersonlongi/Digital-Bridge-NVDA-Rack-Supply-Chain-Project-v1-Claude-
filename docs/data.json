@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-11-09 15:05 UTC",
+  "as_of_utc": "2026-11-10 14:17 UTC",
   "latest_period": "2026-10",
-  "index_yoy": 73.1,
+  "index_yoy": 74.4,
   "n_companies": 16,
   "buckets": [
     {
@@ -36,7 +36,7 @@
     },
     {
       "bucket": "Foundry / CoWoS (anchor)",
-      "yoy": 54.6,
+      "yoy": 59.7,
       "n": 1
     },
     {
@@ -55,13 +55,13 @@
       "n": 1
     },
     {
-      "bucket": "Chassis",
-      "yoy": 15.8,
+      "bucket": "Power + liquid cooling",
+      "yoy": 30.1,
       "n": 1
     },
     {
-      "bucket": "Power + liquid cooling",
-      "yoy": 14.6,
+      "bucket": "Chassis",
+      "yoy": 15.8,
       "n": 1
     },
     {
@@ -147,10 +147,10 @@
       "stock_id": "2330",
       "name": "TSMC",
       "bucket": "Foundry / CoWoS (anchor)",
-      "period": "2026-09",
-      "revenue": 511857399000.0,
-      "yoy": 54.6,
-      "mom": -0.6
+      "period": "2026-10",
+      "revenue": 586890319000.0,
+      "yoy": 59.7,
+      "mom": 14.7
     },
     {
       "stock_id": "2317",
@@ -189,6 +189,15 @@
       "mom": 6.5
     },
     {
+      "stock_id": "2308",
+      "name": "Delta Electronics",
+      "bucket": "Power + liquid cooling",
+      "period": "2026-10",
+      "revenue": 74666163000.0,
+      "yoy": 30.1,
+      "mom": 14.2
+    },
+    {
       "stock_id": "8210",
       "name": "Chenbro",
       "bucket": "Chassis",
@@ -196,15 +205,6 @@
       "revenue": 2307916000.0,
       "yoy": 15.8,
       "mom": -6.8
-    },
-    {
-      "stock_id": "2308",
-      "name": "Delta Electronics",
-      "bucket": "Power + liquid cooling",
-      "period": "2026-09",
-      "revenue": 65399563000.0,
-      "yoy": 14.6,
-      "mom": 1.3
     },
     {
       "stock_id": "4966",
@@ -267,7 +267,7 @@
     },
     {
       "period": "2026-10",
-      "yoy": 78.6
+      "yoy": 74.4
     }
   ],
   "missing": []
